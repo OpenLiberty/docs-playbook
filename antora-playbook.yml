@@ -8,7 +8,10 @@ content:
   # Test one component with each doc type being a module in it
   - url: https://github.com/OpenLiberty/docs.git
     start_path: ref
-    branches: modules, modules2
+    branches: modules
+  - url: https://github.com/OpenLiberty/docs.git
+    start_path: navigation
+    branches: modules
     
 asciidoc:
   attributes:
