@@ -9,9 +9,6 @@ content:
   - url: https://github.com/OpenLiberty/docs.git
     start_path: ref
     branches: modules
-  - url: https://github.com/OpenLiberty/docs.git
-    start_path: navigation
-    branches: modules
     
 asciidoc:
   attributes:
