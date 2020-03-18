@@ -8,7 +8,7 @@ content:
   # Test one component with each doc type being a module in it
   - url: https://github.com/OpenLiberty/docs.git
     # start_path: .
-    branches: modules, modules2
+    branches: antora, v9.0.0.1
     
 asciidoc:
   attributes:
