@@ -2,7 +2,7 @@ site:
   title: Open Liberty Docs
   # the 404 page and sitemap files only get generated when the url property is set
   url: https://antora.mybluemix.net/docs
-  start_page: general::logging.adoc
+  start_page: general::overview.adoc
 content:
   sources:
   # Test one component with each doc type being a module in it
