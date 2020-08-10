@@ -26,4 +26,10 @@ This is the flow that must be followed when releasing a new version of docs on o
 
 5. Once the antora.yml [`staging`](https://github.com/OpenLiberty/docs/blob/staging/antora.yml) and [`draft`](https://github.com/OpenLiberty/docs/blob/draft/antora.yml) versions have been updated, create a pull request from `staging` to `vNext` to update the `antora.yml` version in `vNext`.
 
-6. Rebuild the openliberty.io site using the IBM Cloud pipeline(https://cloud.ibm.com/devops/pipelines/fcc7c3e9-9c40-4a58-8a7f-09c08413ab7d?env_id=ibm:yp:us-south).
+6. (Temporary for now). Until Antora natively supports 'latest' redirecting to the latest version, we have to update what version `latest` in the url redirects to: Update the redirect for both `/docs/latest/*` and `/docs/latest/` in the development branch of the UI [redirect file](https://github.com/OpenLiberty/openliberty.io/blob/development/src/main/webapp/WEB-INF/redirects.properties) to redirect to the new released doc version (without a `v` in the url).
+
+7. (Temporary for now) Rebuild the [development site](http://dev-openlibertyio.mybluemix.net/) using the [IBM Cloud development pipeline](https://cloud.ibm.com/devops/pipelines/61002d76-1c13-4502-a109-3b794b3f2350?env_id=ibm:yp:us-south) and test that the docs link works and redirects to the newest doc version once the site is done building.
+
+8. (Temporary for now) Make a pull request from the [UI development branch](https://github.com/OpenLiberty/openliberty.io/tree/development) into the [UI master branch](https://github.com/OpenLiberty/openliberty.io/tree/master).
+
+9.  Rebuild the openliberty.io site using the IBM Cloud pipeline(https://cloud.ibm.com/devops/pipelines/fcc7c3e9-9c40-4a58-8a7f-09c08413ab7d?env_id=ibm:yp:us-south).
