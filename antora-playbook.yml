@@ -1,7 +1,6 @@
 site:
   title: Open Liberty Docs
-  start_page: ROOT::overview.adoc
-  url: https://openliberty.io
+  start_page: ROOT::overview.ado
 content:
   sources:
   # Test one component with each doc type being a module in it
