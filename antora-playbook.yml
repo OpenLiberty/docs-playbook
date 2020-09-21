@@ -6,7 +6,13 @@ content:
   # Test one component with each doc type being a module in it
   - url: https://github.com/OpenLiberty/docs.git
     # start_path: .
-    branches: [v*.0.0.*-draft, draft]
+    branches: [v20.0.0.7-generated-test]
+  - url: https://github.com/OpenLiberty/docs-generated.git
+    # start_path: .
+    branches: [v20.0.0.7-generated-test]
+  - url: https://github.com/OpenLiberty/docs-javadoc.git
+    # start_path: .
+    branches: [v20.0.0.7-generated-test]
     
 asciidoc:
   attributes:
