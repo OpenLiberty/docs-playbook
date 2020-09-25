@@ -6,7 +6,7 @@ content:
   # Test one component with each doc type being a module in it
   - url: https://github.com/OpenLiberty/docs.git
     # start_path: .
-    branches: [v20.0.0.7, v20.0.0.8, v20.0.0.9]
+    branches: [v20.0.0.7, v20.0.0.8, v20.0.0.9, v20.0.0.10]
     
 asciidoc:
   attributes:
