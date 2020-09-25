@@ -16,7 +16,7 @@ The [draft site](https://draft-openlibertyio.mybluemix.net/) is built using the 
 
 This is the flow that must be followed when releasing a new version of docs on openliberty.io. These steps update the `vNext`, `staging` and `draft` branches of the [docs repo](https://github.com/OpenLiberty/docs) so that the next version of docs can be worked on and ensures that fixes can still be made to the docs of the version being released.
 
-Before proceeding, make sure none of the data centers are being deployed to on the [prod pipeline](https://cloud.ibm.com/devops/pipelines/fcc7c3e9-9c40-4a58-8a7f-09c08413ab7d?env_id=ibm:yp:us-south). This is so merging pull requests later into prod does not impact any current deployments.
+Before proceeding, make sure there are no current builds on the [prod pipeline](https://cloud.ibm.com/devops/pipelines/fcc7c3e9-9c40-4a58-8a7f-09c08413ab7d?env_id=ibm:yp:us-south). This is so merging pull requests later into prod does not impact any current deployments.
 
 1. Once all of the changes look correct on the [staging site](https://staging-openlibertyio.mybluemix.net/docs/), and all of the `staging` branch changes have been merged into the `vNext` branch, checkout the `vNext` branch and run `git pull` to get the updates. Then, create a branch off of the `vNext` branch with the next release version number. E.g. if the most recent version on openliberty.io is `20.0.0.8`, then create a `v20.0.0.9`  branch off of `vNext` by checking out the `vNext` branch and running `git checkout -b v20.0.0.9` and `git push` the branch.
 
