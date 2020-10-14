@@ -10,9 +10,6 @@ content:
   - url: https://github.com/OpenLiberty/docs-generated.git
     # start_path: .
     branches: [v20.0.0.7-generated-test]
-  - url: https://github.com/OpenLiberty/docs-javadoc.git
-    # start_path: .
-    branches: [v20.0.0.7-generated-test]
     
 asciidoc:
   attributes:
