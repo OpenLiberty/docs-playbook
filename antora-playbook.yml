@@ -3,13 +3,10 @@ site:
   start_page: ROOT::overview.adoc
 content:
   sources:
-  # Test one component with each doc type being a module in it
   - url: https://github.com/OpenLiberty/docs.git
-    # start_path: .
-    branches: [v20.0.0.7-generated-test]
+    branches: [v*.0.0.*-draft-gen]
   - url: https://github.com/OpenLiberty/docs-generated.git
-    # start_path: .
-    branches: [v20.0.0.7-generated-test]
+    branches: [v*.0.0.*-draft]
     
 asciidoc:
   attributes:
