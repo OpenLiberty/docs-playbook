@@ -3,9 +3,9 @@ site:
   start_page: ROOT::overview.adoc
 content:
   sources:
-  # Test one component with each doc type being a module in it
   - url: https://github.com/OpenLiberty/docs.git
-    # start_path: .
+    branches: [v*.0.0.*-draft, draft]
+  - url: https://github.com/OpenLiberty/docs-generated.git
     branches: [v*.0.0.*-draft, draft]
     
 asciidoc:
@@ -14,9 +14,9 @@ asciidoc:
     source-highlighter: highlightjs
     allow-uri-read: true
   extensions:
-    - ./lib/ol-asciidoc.js
+    - ../../../../scripts/ol-asciidoc.js
 ui:
   bundle:
     url: src/main/content/antora_ui/build/ui-bundle.zip
-    snapshot: true    
-  default_layout: general-reference    
+    snapshot: true
+  default_layout: general-reference
