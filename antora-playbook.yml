@@ -4,9 +4,9 @@ site:
 content:
   sources:
   - url: https://github.com/OpenLiberty/docs.git
-    branches: [v20.0.0.11]
+    branches: [steven]
   - url: https://github.com/OpenLiberty/docs-generated.git
-    branches: [v20.0.0.11]
+    branches: [steven]
     
 asciidoc:
   attributes:
