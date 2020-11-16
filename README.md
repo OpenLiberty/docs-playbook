@@ -30,7 +30,6 @@ Before proceeding, make sure that there are no current builds in the `Build` ste
 
 6. (Temporary for now). Create a branch off of the `staging branch` of the [openliberty.io repo](https://github.com/OpenLiberty/openliberty.io). Make the following updates all in the same branch:
 * Until Antora natively supports 'latest' redirecting to the latest version, we have to update what version `latest` in the url redirects to: Update the redirects for `/docs/latest/*`, `/docs/latest/`, and `/docs/latest` in the [redirect file](https://github.com/OpenLiberty/openliberty.io/blob/staging/src/main/webapp/WEB-INF/redirects.properties) to redirect to the new released doc version (without a `v` in the url).
-* Update the `./scripts/build_clone_docs.sh vX.0.0.X` command in the [./scripts/build_jekyll_maven.sh](https://github.com/OpenLiberty/openliberty.io/blob/staging/scripts/build_jekyll_maven.sh) file to clone the latest doc version to get the javadocs which are not handled completely by Antora yet. 
 * Update the version of `{replace_version page.url 'X.0.0.X' }` in [src/main/content/antora_ui/src/partials/head-info.hbs](https://github.com/OpenLiberty/openliberty.io/blob/staging/src/main/content/antora_ui/src/partials/head-info.hbs) so that the canonical meta tag is set to the latest version of the documentation for all versions of the docs. 
 * Update the version of the url `<loc>https://openliberty.io/docs/X.0.0.X/overview.html</loc>` in the [src/main/content/sitemap.xml](https://github.com/OpenLiberty/openliberty.io/blob/staging/src/main/content/sitemap.xml).
 
