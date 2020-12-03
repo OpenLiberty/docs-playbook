@@ -4,7 +4,7 @@ site:
 content:
   sources:
   - url: https://github.com/OpenLiberty/docs.git
-    branches: [v*.0.0.*-draft, draft]
+    branches: [draft]
   - url: https://github.com/OpenLiberty/docs-generated.git
     branches: [draft]
     
