@@ -6,7 +6,7 @@ content:
   - url: https://github.com/OpenLiberty/docs.git
     branches: [Steven]
   - url: https://github.com/OpenLiberty/docs-generated.git
-    branches: [v21.0.0.5]
+    branches: [staging]
     
 asciidoc:
   attributes:
