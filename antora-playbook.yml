@@ -1,22 +1,30 @@
-site:
-  title: Open Liberty Docs
-  start_page: ROOT::overview.adoc
-content:
-  sources:
-  - url: https://github.com/OpenLiberty/docs.git
-    branches: [v*.0.0.*-staging, staging, !v20.0.0.7]
-  - url: https://github.com/OpenLiberty/docs-generated.git
-    branches: [v*.0.0.*-staging, staging, !v20.0.0.7]    
-    
-asciidoc:
-  attributes:
+--- 
+asciidoc: 
+  attributes: 
+    allow-uri-read: true
     icons: font
     source-highlighter: highlightjs
-    allow-uri-read: true
-  extensions:
+  extensions: 
     - ../../../../scripts/ol-asciidoc.js
-ui:
-  bundle:
-    url: src/main/content/antora_ui/build/ui-bundle.zip
+content: 
+  sources: 
+    - 
+      branches: 
+        - v*.0.0.*-staging
+        - staging
+        - "!v20.0.0.7"
+      url: "https://github.com/OpenLiberty/docs.git"
+    - 
+      branches: 
+        - v*.0.0.*-staging
+        - staging
+        - "!v20.0.0.7"
+      url: "https://github.com/OpenLiberty/docs-generated.git"
+site: 
+  start_page: "ROOT::overview.adoc"
+  title: "Open Liberty Docs"
+ui: 
+  bundle: 
     snapshot: true
+    url: src/main/content/antora_ui/build/ui-bundle.zip
   default_layout: general-reference
