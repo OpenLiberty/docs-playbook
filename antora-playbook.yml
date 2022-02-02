@@ -15,7 +15,7 @@ asciidoc:
     source-highlighter: highlightjs
     allow-uri-read: true
   extensions:
-    - ./scripts/ol-asciidoc.js
+    - scripts/ol-asciidoc.js
 ui:
   bundle:
     url: src/main/content/antora_ui/build/ui-bundle.zip
