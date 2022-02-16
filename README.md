@@ -32,7 +32,7 @@ Before proceeding, make sure that there are no current builds in the `Build` ste
 
 7. Repeat steps 5 and 6 for the [docs-generated repo](https://github.com/OpenLiberty/docs-generated/blob/vNext/antora.yml)
 
-8. Until Antora natively supports 'latest' redirecting to the latest version, we have to update what version `latest` in the url redirects to. In this repo, update [the redirects file on `prod`](https://github.com/OpenLiberty/docs-playbook/blob/prod/doc-redirects.properties) so that `/docs/latest/*`, `/docs/latest/`, and `/docs/latest` redirect to the new released doc version (without a `v` in the url). Then, update the same file on [`draft`](https://github.com/OpenLiberty/docs-playbook/blob/draft/doc-redirects.properties) and [`staging`](https://github.com/OpenLiberty/docs-playbook/blob/staging/doc-redirects.properties) to point to the _next_ upcoming release (the newest released version + 1).
+8. With the latest update of antora version (antora 3.0.1) and by adding the following parameter latest_version_segment: latest in antora-playbook.yml the latest numerical version will be changed to symbolic version in the URL.
 
 9. (Temporary for now). Create a branch off of the `prod branch` of the [openliberty.io repo](https://github.com/OpenLiberty/openliberty.io). Make the following updates all in the same branch and merge them into `draft` and `staging`:
   
