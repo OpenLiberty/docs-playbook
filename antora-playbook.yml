@@ -8,9 +8,7 @@ content:
   - url: https://github.com/OpenLiberty/docs-generated.git
     branches: [v*.0.0.*-draft, draft]
 urls:
-  latest_version_segment_strategy: redirect:to
   latest_version_segment: latest
-  redirect_facility: nginx
 asciidoc:
   attributes:
     icons: font
