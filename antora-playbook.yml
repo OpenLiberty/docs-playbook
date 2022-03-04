@@ -4,9 +4,9 @@ site:
 content:
   sources:
   - url: https://github.com/OpenLiberty/docs.git
-    branches: [v*.0.0.*-staging, staging]
+    branches: [v*.0.0.*-prod, prod]
   - url: https://github.com/OpenLiberty/docs-generated.git
-    branches: [v*.0.0.*-staging, staging]
+    branches: [v*.0.0.*-prod, prod]
 urls:
   latest_version_segment: latest   
 asciidoc:
