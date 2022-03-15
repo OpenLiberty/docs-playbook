@@ -7,8 +7,7 @@ content:
     branches: [v*.0.0.*-draft, draft]
   - url: https://github.com/OpenLiberty/docs-generated.git
     branches: [draft]
-urls:
-  latest_version_segment: latest   
+    
 asciidoc:
   attributes:
     icons: font
