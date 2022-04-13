@@ -3,9 +3,9 @@ site:
   start_page: ROOT::overview.adoc
 content:
   sources:
-  - url: https://github.com/kinueng/docs.git
+  - url: https://github.com/OpenLiberty/docs.git
     branches: [v22.0.0.1, v22.0.0.2]
-  - url: https://github.com/kinueng/docs-generated.git
+  - url: https://github.com/OpenLiberty/docs.git
     branches: [v22.0.0.1, v22.0.0.2]
     
 asciidoc:
