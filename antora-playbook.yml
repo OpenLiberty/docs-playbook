@@ -6,7 +6,7 @@ content:
   - url: https://github.com/kinueng/docs.git
     branches: [v22.0.0.1, v22.0.0.2]
   - url: https://github.com/kinueng/docs-generated.git
-    branches: [docker, docker2]
+    branches: [v22.0.0.1, v22.0.0.2]
     
 asciidoc:
   attributes:
