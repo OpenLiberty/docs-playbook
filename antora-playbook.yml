@@ -10,8 +10,8 @@ content:
 urls:
   latest_version_segment: latest 
 antora:
-  extensions:
-    - scripts/custom-sort.js    
+   extensions:
+     - scripts/custom-sort.js       
 asciidoc:
   attributes:
     icons: font
