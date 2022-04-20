@@ -7,7 +7,11 @@ content:
     branches: [v*.0.0.*-staging, staging]
   - url: https://github.com/OpenLiberty/docs-generated.git
     branches: [v*.0.0.*-staging, staging]    
-    
+urls:
+  latest_version_segment: latest
+antora:
+  extensions:
+    - scripts/custom-sort.js 
 asciidoc:
   attributes:
     icons: font
