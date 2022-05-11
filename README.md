@@ -30,4 +30,4 @@ Before proceeding, make sure that there are no current builds in the `Build` ste
 
 6. Once the antora.yml [`staging`](https://github.com/OpenLiberty/docs/blob/staging/antora.yml) and [`draft`](https://github.com/OpenLiberty/docs/blob/draft/antora.yml) versions have been updated in the docs repo, create a pull request from `staging` to `vNext` to update the `antora.yml` version in `vNext`.
 
-7. Now Antora natively supports 'latest' redirecting to the latest version, but on reverse when user manually types the actual latest numerical version eg: 22.0.0.5 for redirecting to symbolic version need to update in doc-redirects properties file as /docs/22.0.0.5/* (Why because Antora builds the latest version as latest ie with url /latest, so /22.0.0.5 doesn’t exists)
+7. Now Antora natively supports 'latest' redirecting to the latest version, but on reverse when user manually types the actual latest numerical version eg: 22.0.0.5 for redirecting to symbolic version need to update in doc-redirects properties file as /docs/22.0.0.5/* (Why because Antora builds the latest version as latest ie with url /latest, so /22.0.0.5 doesn’t exists).
