@@ -4,14 +4,14 @@ site:
 content:
   sources:
   - url: https://github.com/OpenLiberty/docs.git
-    branches: [v20.0.0.7, v20.0.0.8, v20.0.0.9, v20.0.0.10, v20.0.0.11, v20.0.0.12, v21.0.0.1, v21.0.0.2, v21.0.0.3, v21.0.0.4, v21.0.0.5, v21.0.0.6, v21.0.0.7, v21.0.0.8, v21.0.0.9, v21.0.0.10, v21.0.0.11, v21.0.0.12, v22.0.0.1, v22.0.0.2, v22.0.0.3, v22.0.0.4]
+    branches: [v*.0.0.*-draft, draft]
   - url: https://github.com/OpenLiberty/docs-generated.git
-    branches: [v20.0.0.7, v20.0.0.8, v20.0.0.9, v20.0.0.10, v20.0.0.11, v20.0.0.12, v21.0.0.1, v21.0.0.2, v21.0.0.3, v21.0.0.4, v21.0.0.5, v21.0.0.6, v21.0.0.7, v21.0.0.8, v21.0.0.9, v21.0.0.10, v21.0.0.11, v21.0.0.12, v22.0.0.1, v22.0.0.2, v22.0.0.3, v22.0.0.4]
+    branches: [draft]
 urls:
-  latest_version_segment: latest
+  latest_version_segment: latest 
 antora:
-  extensions:
-    - scripts/custom-sort.js 
+   extensions:
+     - scripts/custom-sort.js       
 asciidoc:
   attributes:
     icons: font
@@ -24,3 +24,4 @@ ui:
     url: src/main/content/antora_ui/build/ui-bundle.zip
     snapshot: true
   default_layout: general-reference
+  
