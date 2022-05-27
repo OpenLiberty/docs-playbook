@@ -70,7 +70,7 @@ Once you have verified the generated doc on the draft site, open a PR from `draf
 1. Open Github Desktop and select the docs-generated repo
 2. Select `staging` in the **Current Branch** dropdown menu
 3. Click the **Create a Pull Request** button.
-4. 5. Get the resulting PR reviewed and merged.
+4. Get the resulting PR reviewed and merged.
 
 ## Publishing the docs and preparing for the next release
 
