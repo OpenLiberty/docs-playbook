@@ -65,7 +65,7 @@ Once you have verified the generated doc on the draft site, open a PR from `draf
 4. In the resulting PR, click the **Edit** button and change the Base to `staging`
 5. Get the resulting PR reviewed and merged.
 
- Once you verify the generated doc on the `staging` site, on a PR from `staging' to `vNext` in the docs-generated repo:
+ Once you verify the generated doc on the `staging` site, on a PR from `staging` to `vNext` in the docs-generated repo:
 
 1. Open Github Desktop and select the docs-generated repo
 2. Select `staging` in the **Current Branch** dropdown menu
