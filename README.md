@@ -80,7 +80,7 @@ Before proceeding, make sure that there are no current builds in the `Build` ste
    a. Select `vNext` in the **Current Branch** menu in Github Desktop
    b. Click the **New Branch** button and create a branch with the next release version number. E.g. if the most recent version on openliberty.io is `20.0.0.8`, then create a `v20.0.0.9`  branch. 
 
-2. Follow the same procedure in steps 1a-1b to create `vX.0.0.X-staging` and `vX.0.0.X-draft` branches off of the new version branch you just created, which will be used for retroactive fixes to this version in the future. E.g. if `v20.0.0.9` is the version being released, then select `v20.0.0.9` from the **Current Branch** menu in Github desktop and create a new branch called v20.0.0.9-staging`  Switch back to  `v20.0.0.9` branch and repeat to create v20.0.0.9-draft`. **Don't forget to publish the branch all the brannches that you create by clicking "Publish this branch" after you create each branch**.
+2. Follow the same procedure in steps 1a-1b to create `vX.0.0.X-staging` and `vX.0.0.X-draft` branches off of the new version branch you just created, which will be used for retroactive fixes to this version in the future. E.g. if `v20.0.0.9` is the version being released, then select `v20.0.0.9` from the **Current Branch** menu in GitHub desktop and create a new branch called `v20.0.0.9-staging`.  Switch back to `v20.0.0.9` branch and repeat to create `v20.0.0.9-draft`. **Don't forget to publish the branch all the branches that you create by clicking "Publish this branch" after you create each branch**.
   
 3. Repeat steps 1 and 2 for the [docs-generated repo](https://github.com/OpenLiberty/docs-generated).
 
