@@ -88,7 +88,7 @@ Before proceeding, make sure that there are no current builds in the `Build` ste
    a. Go to the [antora-playbook.yml](https://github.com/OpenLiberty/docs-playbook/blob/prod/antora-playbook.yml). 
    b. Click the pencil icon to edit the file. 
    c. Add the new release version to the `branches` section
-   d. After you edit the file, create a pull request into the `prod branch` by clicking the **Propose changes** button. Once the pull request has been reviewed, merge it in.
+   d. After you edit the file, create a pull request into the `prod` branch by clicking the **Propose changes** button. Once the pull request has been reviewed, merge it in.
 
 5. Repeat same procedure in steps 4b-4d to change the `version` in `antora.yml` in the [`staging`](https://github.com/OpenLiberty/docs/blob/staging/antora.yml) and [`draft`](https://github.com/OpenLiberty/docs/blob/draft/antora.yml) branches of the docs repo to the next release `vX.0.0.X` version incremented from the current release being published to openliberty.io. Once those changes have been reviewed merge them in. This is important so that the staging and draft builds can complete. Antora requires all of the versions of `antora.yml` of the branches being used in a build to have a unique version so they need to be updated to be unique from the version just released. You can either change the version and commit to draft/staging or create a pull request to do so.
 
