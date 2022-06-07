@@ -79,28 +79,35 @@ Before proceeding, make sure that there are no current builds in the `Build` ste
 1. Once all of the changes look correct on the [staging site](https://staging-openlibertyio.mybluemix.net/docs/), and all of the `staging` branch changes have been merged into the `vNext` branch, create the branches you need for the new release.
 
    a. Select `vNext` in the **Current Branch** menu in Github Desktop
+
    b. Click the **New Branch** button and create a branch with the next release version number. E.g. if the most recent version on openliberty.io is `20.0.0.8`, then create a `v20.0.0.9`  branch. 
 
 2. Follow the same procedure in steps 1a-1b to create `vX.0.0.X-staging` and `vX.0.0.X-draft` branches off of the new version branch you just created, which will be used for retroactive fixes to this version in the future. E.g. if `v20.0.0.9` is the version being released, then select `v20.0.0.9` from the **Current Branch** menu in GitHub desktop and create a new branch called `v20.0.0.9-staging`.  Switch back to `v20.0.0.9` branch and repeat to create `v20.0.0.9-draft`. **Don't forget to publish the branch all the branches that you create by clicking "Publish this branch" after you create each branch**.
   
 3. Repeat steps 1 and 2 for the [docs-generated repo](https://github.com/OpenLiberty/docs-generated).
 
-4. Create a new branch off of the `prod` branch of this repo to add the new release version to the `branches` section of the [`prod playbook`](https://github.com/OpenLiberty/docs-playbook/blob/prod/antora-playbook.yml). You can make this change in your browser.
+4. Create a new branch off of the `prod` branch of this repo (docs-playbook) to add the new release version to the `branches` section of the [`antora- playbook.yaml`](https://github.com/OpenLiberty/docs-playbook/blob/prod/antora-playbook.yml). You can make this change in your browser.
 
    a. Go to the [antora-playbook.yml](https://github.com/OpenLiberty/docs-playbook/blob/prod/antora-playbook.yml). 
+
    b. Click the pencil icon to edit the file. 
+
    c. Add the new release version to the `branches` section
+
    d. After you edit the file, create a pull request into the `prod` branch by clicking the **Propose changes** button. Once the pull request has been reviewed, merge it in.
 
-5. In the docs repo, crerate a new prod-based branch and change the `version` in `antora.yml` in the [`staging`](https://github.com/OpenLiberty/docs/blob/staging/antora.yml) and [`draft`](https://github.com/OpenLiberty/docs/blob/draft/antora.yml) branches  to the next release `vX.0.0.X` version, incremented from the current release being published to openliberty.io. For example, if `22.0.0.6` is being released, set the version to `22.0.0.7` in both `draft` and `staging`.
+5. In the docs repo, create a new vNext-based branch and change the `version` in `antora.yml` in the [`staging`](https://github.com/OpenLiberty/docs/blob/staging/antora.yml) and [`draft`](https://github.com/OpenLiberty/docs/blob/draft/antora.yml) branches  to the next release `vX.0.0.X` version, incremented from the current release being published to openliberty.io. For example, if `22.0.0.6` is being released, set the version to `22.0.0.7` in both `draft` and `staging`.
 
 Once those changes have been reviewed merge them in. This is important so that the staging and draft builds can complete. Antora requires all of the versions of `antora.yml` of the branches being used in a build to have a unique version so they need to be updated to be unique from the version just released. You can either change the version and commit to draft/staging or create a pull request to do so.
 
 6. Once the antora.yml [`staging`](https://github.com/OpenLiberty/docs/blob/staging/antora.yml) and [`draft`](https://github.com/OpenLiberty/docs/blob/draft/antora.yml) versions have been updated in the docs repo, create a pull request from `staging` to `vNext` to update the `antora.yml` version in `vNext`.
 
    a. Open Github Desktop and select the docs-generated repo
+
    b. Select `staging` in the **Current Branch** dropdown menu
+
    c. Click the **Create a Pull Request** button.
+
    d. Get the resulting PR reviewed and merged.
 
 7. Repeat steps 5 and 6 for the [docs-generated repo](https://github.com/OpenLiberty/docs-generated/blob/vNext/antora.yml)
