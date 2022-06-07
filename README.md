@@ -50,7 +50,7 @@ Before proceeding, make sure that there are no current builds in the `Build` ste
 
 10. Finally, in the [#was-open-liberty-site](https://ibm-cloud.slack.com/archives/C4U7TQUSY/p1652190177756459) Slack channel, request a rebuild of the production openliberty.io site to publish the release.  Once a trigger is added to kick off a prod site build for changes to the `prod` branch of this repo, this step will be removed.
 
-# Publishing a new release of Open Liberty Docs by using GitHub desktop
+# Publishing a new release of Open Liberty Docs by using GitHub Desktop
 
 These instructions are identical to those in the previous section except for Git processes are described from the perpsective of using the GitHub Desktop client instead of the command line. This procedure assumes you have already have GitHub Desktop and have already cloned the [docs](https://github.com/OpenLiberty/docs), [docs-generated](https://github.com/OpenLiberty/docs-generated), and docs-playbook repos.
 
@@ -90,7 +90,9 @@ Before proceeding, make sure that there are no current builds in the `Build` ste
    c. Add the new release version to the `branches` section
    d. After you edit the file, create a pull request into the `prod` branch by clicking the **Propose changes** button. Once the pull request has been reviewed, merge it in.
 
-5. Repeat same procedure in steps 4b-4d to change the `version` in `antora.yml` in the [`staging`](https://github.com/OpenLiberty/docs/blob/staging/antora.yml) and [`draft`](https://github.com/OpenLiberty/docs/blob/draft/antora.yml) branches of the docs repo to the next release `vX.0.0.X` version incremented from the current release being published to openliberty.io. Once those changes have been reviewed merge them in. This is important so that the staging and draft builds can complete. Antora requires all of the versions of `antora.yml` of the branches being used in a build to have a unique version so they need to be updated to be unique from the version just released. You can either change the version and commit to draft/staging or create a pull request to do so.
+5. In the docs repo, crerate a new prod-based branch and change the `version` in `antora.yml` in the [`staging`](https://github.com/OpenLiberty/docs/blob/staging/antora.yml) and [`draft`](https://github.com/OpenLiberty/docs/blob/draft/antora.yml) branches  to the next release `vX.0.0.X` version, incremented from the current release being published to openliberty.io. For example, if `22.0.0.6` is being released, set the version to `22.0.0.7` in both `draft` and `staging`.
+
+Once those changes have been reviewed merge them in. This is important so that the staging and draft builds can complete. Antora requires all of the versions of `antora.yml` of the branches being used in a build to have a unique version so they need to be updated to be unique from the version just released. You can either change the version and commit to draft/staging or create a pull request to do so.
 
 6. Once the antora.yml [`staging`](https://github.com/OpenLiberty/docs/blob/staging/antora.yml) and [`draft`](https://github.com/OpenLiberty/docs/blob/draft/antora.yml) versions have been updated in the docs repo, create a pull request from `staging` to `vNext` to update the `antora.yml` version in `vNext`.
    a. Open Github Desktop and select the docs-generated repo
