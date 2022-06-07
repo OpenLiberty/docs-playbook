@@ -26,9 +26,7 @@ Once you have verified the generated doc on the draft site, open a PR from `draf
 
 ## Publishing the docs and preparing for the next release
 
-Before proceeding, make sure that there are no current builds in the `Build` step of the [prod pipeline](https://cloud.ibm.com/devops/pipelines/fcc7c3e9-9c40-4a58-8a7f-09c08413ab7d?env_id=ibm:yp:us-south). This is so merging pull requests later into prod does not impact any current deployments.
-
-1. Once all of the changes look correct on the [staging site](https://staging-openlibertyio.mybluemix.net/docs/), and all of the `staging` branch changes have been merged into the `vNext` branch in the docs and docs-generated repos, checkout the `vNext` branch in the docs repo and run `git pull` to get the updates. Then, create a branch off of the `vNext` branch with the next release version number. E.g. if the most recent version on openliberty.io is `20.0.0.8`, then create a `v20.0.0.9`  branch off of `vNext` by checking out the `vNext` branch and running `git checkout -b v20.0.0.9` and `git push` the branch.
+1. Once all of the changes look correct on the [staging site](https://staging-openlibertyio.mybluemix.net/docs/), and all of the `staging` branch changes have been merged into the `vNext` branch in the docs and docs-generated repos, check out the `vNext` branch in the docs repo and run `git pull` to get the updates. Then, create a branch off of the `vNext` branch with the next release version number. E.g. if the most recent version on openliberty.io is `20.0.0.8`, then create a `v20.0.0.9`  branch off of `vNext` by checking out the `vNext` branch and running `git checkout -b v20.0.0.9` and `git push` the branch.
 
 2. Create `vX.0.0.X-staging` and `vX.0.0.X-draft` branches off of the new version branch just created which will be used for retroactive fixes to this version in the future. E.g. if `v20.0.0.9` is the version being released, then from that branch run `git checkout -b v20.0.0.9-staging` and push that branch to the docs repo. Switch back to the `v20.0.0.9` branch and run `git checkout -b v20.0.0.9-draft` and push that branch to the docs repo.
    
@@ -73,8 +71,6 @@ Once you have verified the generated doc on the draft site, open a PR from `draf
 4. Get the resulting PR reviewed and merged.
 
 ## Publishing the docs and preparing for the next release
-
-Before proceeding, make sure that there are no current builds in the `Build` step of the [prod pipeline](https://cloud.ibm.com/devops/pipelines/fcc7c3e9-9c40-4a58-8a7f-09c08413ab7d?env_id=ibm:yp:us-south). This is so merging pull requests later into prod does not impact any current deployments.
 
 1. Once all of the changes look correct on the [staging site](https://staging-openlibertyio.mybluemix.net/docs/), and all of the `staging` branch changes have been merged into the `vNext` branch in the docs and docs-generated repos, create the branches you need for the new release in the docs repo.
 
