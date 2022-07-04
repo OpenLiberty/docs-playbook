@@ -6,7 +6,6 @@ content:
   sources:
   - url: https://github.com/OpenLiberty/docs.git
     branches: [v22.0.0.6]
-    start_path: docs/es
   - url: https://github.com/OpenLiberty/docs-generated.git
     branches: [v22.0.0.6] 
 urls:
