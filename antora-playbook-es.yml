@@ -1,6 +1,5 @@
 site:
   title: Open Liberty Docs
-  url: /manual/es
   start_page: ROOT::overview.adoc
 content:
   sources:
@@ -26,8 +25,6 @@ ui:
     url: src/main/content/antora_ui/build/ui-bundle.zip
     snapshot: true
   default_layout: general-reference
-output:
-  clean: true
-  dir: ./output/es
+
   
 
