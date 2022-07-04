@@ -9,7 +9,6 @@ content:
     start_path: docs/en
   - url: https://github.com/OpenLiberty/docs-generated.git
     branches: [v22.0.0.6]
-    start_path: docs/en
 urls:
   latest_version_segment: latest
 antora:
