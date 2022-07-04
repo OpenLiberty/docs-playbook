@@ -1,0 +1,35 @@
+site:
+  title: Open Liberty Docs
+  url: /manual/en
+  start_page: ROOT::overview.adoc
+content:
+  sources:
+  - url: https://github.com/OpenLiberty/docs.git
+    branches: [v22.0.0.6]
+    start_path: docs/en
+  - url: https://github.com/OpenLiberty/docs-generated.git
+    branches: [v22.0.0.6]
+    start_path: docs/en
+urls:
+  latest_version_segment: latest
+antora:
+  extensions:
+    - scripts/custom-sort.js
+asciidoc:
+  attributes:
+    icons: font
+    source-highlighter: highlightjs
+    allow-uri-read: true
+    language: en
+  extensions:
+    - scripts/ol-asciidoc.js
+ui:
+  bundle:
+    url: src/main/content/antora_ui/build/ui-bundle.zip
+    snapshot: true
+  default_layout: general-reference
+output:
+  clean: true
+  dir: ./output/en
+
+
