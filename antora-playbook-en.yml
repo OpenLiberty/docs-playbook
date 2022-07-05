@@ -20,6 +20,9 @@ asciidoc:
     language: en
   extensions:
     - scripts/ol-asciidoc.js
+output:
+  clean: true
+  dir: ./output/en
 ui:
   bundle:
     url: src/main/content/antora_ui/build/ui-bundle.zip
