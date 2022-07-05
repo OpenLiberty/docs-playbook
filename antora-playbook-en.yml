@@ -22,7 +22,7 @@ asciidoc:
     - scripts/ol-asciidoc.js
 output:
   clean: true
-  dir: /en
+  dir: ./en
 ui:
   bundle:
     url: src/main/content/antora_ui/build/ui-bundle.zip
