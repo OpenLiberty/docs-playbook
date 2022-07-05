@@ -6,7 +6,7 @@ content:
   - url: https://github.com/OpenLiberty/docs.git
     branches: [v22.0.0.5_de, v22.0.0.6_de]
   - url: https://github.com/OpenLiberty/docs-generated.git
-    branches: [v22.0.0.5, v22.0.0.6] 
+    branches: [v22.0.0.5, v22.0.0.6]
 urls:
   latest_version_segment: latest
 antora:
