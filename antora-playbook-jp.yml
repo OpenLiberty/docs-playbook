@@ -17,12 +17,12 @@ asciidoc:
     icons: font
     source-highlighter: highlightjs
     allow-uri-read: true
-    language: es
+    language: jp
   extensions:
     - scripts/ol-asciidoc.js
 output:
   clean: true
-  dir: ./es
+  dir: ./jp
 ui:
   bundle:
     url: src/main/content/antora_ui/build/ui-bundle.zip
