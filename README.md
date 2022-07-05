@@ -16,7 +16,7 @@ The [draft site](https://draft-openlibertyio.mybluemix.net/) is built using the 
 
 This is the flow that must be followed when releasing a new version of docs on openliberty.io. These steps update the `vNext`, `staging` and `draft` branches of the [docs repo](https://github.com/OpenLiberty/docs) so that the next version of docs can be worked on and ensures that fixes can still be made to the docs of the version being released. This procedure assumes you have already cloned the [docs](https://github.com/OpenLiberty/docs), [docs-generated](https://github.com/OpenLiberty/docs-generated), and docs-playbook repos.
 
-The following sections provide instructions to publish an Open Liberty release from the command line. For similar instructions that use the GitHub desktop client, see [Publishing a new release of Open Liberty Docs by using GitHub desktop](https://github.com/OpenLiberty/docs-playbook/edit/draft/README.md#Publishing-a-new-release-of-Open-Liberty-Docs-by-using-GitHub-desktop)
+The following sections provide instructions to publish an Open Liberty release from the command line. For similar instructions that use the GitHub desktop client, see [Publishing a new release of Open Liberty Docs by using GitHub desktop](https://github.com/OpenLiberty/docs-playbook/README.md#Publishing-a-new-release-of-Open-Liberty-Docs-by-using-GitHub-desktop)
 
 ## Updating the generated docs
 
