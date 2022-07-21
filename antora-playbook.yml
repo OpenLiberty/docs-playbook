@@ -4,9 +4,9 @@ site:
 content:
   sources:
   - url: https://github.com/OpenLiberty/docs.git
-    branches: [v*.0.0.*-staging, !v20.0.0.7-staging, staging]
+    branches: [v*.0.0.*-staging, '!v20.0.0.7-staging', staging]
   - url: https://github.com/OpenLiberty/docs-generated.git
-    branches: [v*.0.0.*-staging, !v20.0.0.7-staging, staging]    
+    branches: [v*.0.0.*-staging, '!v20.0.0.7-staging', staging]    
 urls:
   latest_version_segment: latest
 antora:
