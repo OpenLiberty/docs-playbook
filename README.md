@@ -34,7 +34,7 @@ Once you have verified the generated doc on the draft site, open a PR from `draf
 
 4. Update the docs-playbook `antora.yaml` file to add the new release version to production and remove the oldest release version from production, draft, and staging.
 
-   Openliberty.io docs support 2 years worth of previous releases, which can be selected from the version picker at the top of the docs TOC. With each release, you must add the new release version and remove the oldest release version fromn the `antora.yaml` file to update the version picker.
+   Openliberty.io docs support 2 years worth of previous releases, which can be selected from the version picker at the top of the docs TOC. With each release, you must add the new release version and remove the oldest release version from the `antora.yaml` file to update the version picker.
    
    a. Create a new branch off of the `prod` branch of this repo (docs-playbook) to add the new release version to the `branches` section of the [`antora-playbook.yml`](https://github.com/OpenLiberty/docs-playbook/blob/prod/antora-playbook.yml). 
    
