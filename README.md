@@ -32,7 +32,19 @@ Once you have verified the generated doc on the draft site, open a PR from `draf
    
 3. Repeat steps 1 and 2 for the [docs-generated repo](https://github.com/OpenLiberty/docs-generated).
 
-4. Create a new branch off of the `prod` branch of this repo (docs-playbook) to add the new release version to the `branches` section of the [`antora-playbook.yml`](https://github.com/OpenLiberty/docs-playbook/blob/prod/antora-playbook.yml). Make a pull request into the `prod branch`. Once the pull request has been reviewed merge it in.
+4. Update the docs-playbook `antora.yaml` file to add the new release version to production and remove the oldest release version from production, draft, and staging.
+
+   Openliberty.io docs support 2 years worth of previous releases, which can be selected from the version picker at the top of the docs TOC. With each release, you must add the new release version and remove the oldest release version fromn the `antora.yaml` file to update the version picker.
+   
+   a. Create a new branch off of the `prod` branch of this repo (docs-playbook) to add the new release version to the `branches` section of the [`antora-playbook.yml`](https://github.com/OpenLiberty/docs-playbook/blob/prod/antora-playbook.yml). 
+   
+   b. Remove the oldest branch from the beginning of the list. This version should be 2 years + 1 release behind the current release, ie, if you are publishing 22.0.0.8, you should remove `v20.0.0.7` from the list of branches.
+   
+   c. Make a pull request into the `prod branch`. Once the pull request has been reviewed merge it in.
+   
+   d. The branches list is specified differently in the draft and staging branches of the docs playbook, which use a wildcard schema to define the branches (for example, `branches: [v*.0.0.*-staging, staging]`). To remove the oldest release, you must exclude the corresponding version branch by appending an exclamation point (`!`) to the branch name, surrounding it in single quotation marks, and adding it to the list of branches. For example, to remove 20.0.0.7 from staging, you must specify ` branches: [v*.0.0.*-staging, '!v20.0.0.7-staging', staging]`. 
+   
+   Make this change in both the [draft](https://github.com/OpenLiberty/docs-playbook/blob/draft/antora-playbook.yml) and [staging](https://github.com/OpenLiberty/docs-playbook/blob/staging/antora-playbook.yml) versions of the antora.yaml file, get the PRs reviewed, and merge them into their respective branches.
 
 5. In the docs repo, change the `version` in `antora.yml` in the [`staging`](https://github.com/OpenLiberty/docs/blob/staging/antora.yml) and [`draft`](https://github.com/OpenLiberty/docs/blob/draft/antora.yml) branches to the next release `vX.0.0.X` version incremented from the current release being published to openliberty.io. Once those changes have been reviewed merge them in. This is important so that the staging and draft builds can complete. Antora requires all of the versions of `antora.yml` of the branches being used in a build to have a unique version so they need to be updated to be unique from the version just released. You can either change the version and commit to draft/staging or create a pull request to do so.
 
@@ -82,15 +94,23 @@ Once you have verified the generated doc on the draft site, open a PR from `draf
   
 3. Repeat steps 1 and 2 for the [docs-generated repo](https://github.com/OpenLiberty/docs-generated).
 
-4. Create a new branch off of the `prod` branch of this repo (docs-playbook) to add the new release version to the `branches` section of the [`antora- playbook.yml`](https://github.com/OpenLiberty/docs-playbook/blob/prod/antora-playbook.yml). You can make this change in your browser.
+4. Update the docs-playbook `antora.yaml` file to add the new release version to production and remove the oldest release version from production, draft, and staging.
 
-   a. Go to the [antora-playbook.yml](https://github.com/OpenLiberty/docs-playbook/blob/prod/antora-playbook.yml). 
+   Openliberty.io docs support 2 years worth of previous releases, which can be selected from the version picker at the top of the docs TOC. With each release, you must add the new release version and remove the oldest release version fromn the `antora.yaml` file to update the version picker.
 
-   b. Click the pencil icon to edit the file. 
+   a. Create a new branch off of the `prod` branch of this repo (docs-playbook) to add the new release version to the `branches` section of the [`antora-     playbook.yml`](https://github.com/OpenLiberty/docs-playbook/blob/prod/antora-playbook.yml). You can make this change in your browser.
 
-   c. Add the new release version to the `branches` section
+   b. Go to the [antora-playbook.yml](https://github.com/OpenLiberty/docs-playbook/blob/prod/antora-playbook.yml). 
 
-   d. After you edit the file, create a pull request into the `prod` branch by clicking the **Propose changes** button. Once the pull request has been reviewed, merge it in.
+   c. Click the pencil icon to edit the file. 
+
+   d. Add the new release version to the `branches` section
+
+   e. After you edit the file, create a pull request into the `prod` branch by clicking the **Propose changes** button. Once the pull request has been reviewed, merge it in.
+   
+   f. The branches list is specified differently in the draft and staging branches of the docs playbook, which use a wildcard schema to define the branches (for example, `branches: [v*.0.0.*-staging, staging]`). To remove the oldest release, you must exclude the corresponding version branch by appending an exclamation point (`!`) to the branch name, surrounding it in single quotation marks, and adding it to the list of branches. For example, to remove 20.0.0.7 from staging, you must specify ` branches: [v*.0.0.*-staging, '!v20.0.0.7-staging', staging]`. 
+   
+   Make this change in both the [draft](https://github.com/OpenLiberty/docs-playbook/blob/draft/antora-playbook.yml) and [staging](https://github.com/OpenLiberty/docs-playbook/blob/staging/antora-playbook.yml) versions of the antora.yaml file by following the same procedure that is described in steps 4c. and 4e., making your PRs to either draft or staging as applicable. 
 
 5. In the docs repo, create a new vNext-based branch and change the `version` value in the `antora.yml`file to the next release `vX.0.0.X` version, incremented from the current release being published to openliberty.io. Create PRs to add this change to both the [`staging`](https://github.com/OpenLiberty/docs/blob/staging/antora.yml) and [`draft`](https://github.com/OpenLiberty/docs/blob/draft/antora.yml) branches.  For example, if `22.0.0.6` is being released, set the version to `22.0.0.7` in both `draft` and `staging`.
 
