@@ -40,7 +40,7 @@ Once you have verified the generated doc on the draft site, open a PR from `draf
    
    b. Remove the oldest branch from the beginning of the list. This version should be 2 years + 1 release behind the current release, ie, if you are publishing 22.0.0.8, you should remove `v20.0.0.7` from the list of branches.
    
-   c. Make a pull request into the `prod branch`. Once the pull request has been reviewed merge it in.
+   c. Make a pull request into the `prod` branch. Once the pull request has been reviewed merge it in.
    
    d. The branches list is specified differently in the draft and staging branches of the docs playbook, which use a wildcard schema to define the branches (for example, `branches: [v*.0.0.*-staging, staging]`). To remove the oldest release, you must exclude the corresponding version branch by appending an exclamation point (`!`) to the branch name, surrounding it in single quotation marks, and adding it to the list of branches. For example, to remove 20.0.0.7 from staging, you must specify ` branches: [v*.0.0.*-staging, '!v20.0.0.7-staging', staging]`. 
    
