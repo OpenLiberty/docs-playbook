@@ -22,6 +22,8 @@ The following sections provide instructions to publish an Open Liberty release f
 
 The Open Liberty generated docs, which comprise the majority of the **Features** and **Server configuration** sections of the doc, are built from the [docs-generated repo](https://github.com/OpenLiberty/docs-generated). For each Open Liberty release, Chuck Bridgham from the kernel team posts the updated generated docs to the `draft` branch of the docs-generated repo. Contact Chuck several days before the release to ensure the generated docs are updated on draft in time to publish. 
 
+To verify the generated doc on draft, go to the [docs-generated repo draft branch](https://github.com/OpenLiberty/docs-generated/tree/draft) in a browser and find Chuck's most recent PR in the Git history. Look for a change in the PR, such as updates to a config element or a new feature page, and check the [docs draft site](https://docs-draft-openlibertyio.mybluemix.net/docs/latest/overview.html) to confirm that the changes are showing.
+
 Once you have verified the generated doc on the draft site, open a PR from `draft` to `staging` in the docs-generated repo and get it reviewed and merged. Once youy verify the generated doc on the `staging` site, open a PR from `staging` to `vNext` in the docs-generated repo. Get the PR reviewed and merge it in.
 
 ## Publishing the docs and preparing for the next release
@@ -66,6 +68,8 @@ These instructions are identical to those in the previous section except for Git
 
 ## Updating the generated docs
 The Open Liberty generated docs, which comprise the majority of the **Features** and **Server configuration** sections of the doc, are built from the [docs-generated repo](https://github.com/OpenLiberty/docs-generated). For each Open Liberty release, Chuck Bridgham from the kernel team posts the updated generated docs to the draft branch of the docs-generated repo. Contact Chuck several days before the release to ensure the generated docs are updated on draft in time to publish. 
+
+To verify the generated doc on draft, go to the [docs-generated repo draft branch](https://github.com/OpenLiberty/docs-generated/tree/draft) in a browser and find Chuck's most recent PR in the Git history. Look for a change in the PR, such as updates to a config element or a new feature page, and check the [docs draft site](https://docs-draft-openlibertyio.mybluemix.net/docs/latest/overview.html) to confirm that the changes are showing.
 
 Once you have verified the generated doc on the draft site, open a PR from `draft` to `staging` in the docs generated repo:
 
