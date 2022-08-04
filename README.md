@@ -74,27 +74,29 @@ To verify the generated doc on draft, go to the [docs-generated repo draft branc
 Once you have verified the generated doc on the draft site, open a PR from `draft` to `staging` in the docs generated repo:
 
 1. Open Github Desktop and select the docs-generated repo
-2. Select `draft` in the **Current Branch** dropdown menu
+2. Select `draft` in the **Current Branch** dropdown menu and click **Fetch origin**.
 3. Click the **Create a Pull Request** button.
 4. In the resulting PR, click the **Edit** button and change the Base to `staging`
 5. Get the resulting PR reviewed and merged.
 
- Once you verify the generated doc on the `staging` site, on a PR from `staging` to `vNext` in the docs-generated repo:
+ Once you verify the generated doc on the `staging` site, open a PR from `staging` to `vNext` in the docs-generated repo:
 
 1. Open Github Desktop and select the docs-generated repo
-2. Select `staging` in the **Current Branch** dropdown menu
-3. Click the **Create a Pull Request** button.
+2. Select `staging` in the **Current Branch** dropdown menu and click **Fetch origin** to get any new changes.
+3. Click the **Create a Pull Request** button. Give the PR a descriptiive title.
 4. Get the resulting PR reviewed and merged.
 
 ## Publishing the docs and preparing for the next release
 
 1. Once all of the changes look correct on the [staging site](https://staging-openlibertyio.mybluemix.net/docs/), and all of the `staging` branch changes have been merged into the `vNext` branch in the docs and docs-generated repos, create the branches you need for the new release in the docs repo.
 
-   a. Select `vNext` in the **Current Branch** menu in Github Desktop
+   a. To confirm that all doc changes have merged from staging to vNext, go to the docs repo in GithUb Desktop and select the `vNext` in the **Current Branch** menu. Click the **Create a Pull Request** button. If all changes are merged, you will see "There's nothing to compare". If you see any changes, verify and merge them in.
+   
+   b. In Github Desktop, make sure `vNext` is showing in the **Current Branch** menu. click **Fetch origin** to get any new changes.
 
-   b. Click the **New Branch** button and create a branch with the next release version number. E.g. if the most recent version on openliberty.io is `20.0.0.8`, then create a `v20.0.0.9`  branch. 
+   c. Click the **New Branch** button and create a branch with the next release version number. E.g. if the most recent version on openliberty.io is `20.0.0.8`, then create a `v20.0.0.9`  branch. 
 
-2. Follow the same procedure in steps 1a-1b to create `vX.0.0.X-staging` and `vX.0.0.X-draft` branches off of the new version branch you just created, which will be used for retroactive fixes to this version in the future. E.g. if `v20.0.0.9` is the version being released, then select `v20.0.0.9` from the **Current Branch** menu in GitHub desktop and create a new branch called `v20.0.0.9-staging`.  Switch back to `v20.0.0.9` branch and repeat to create `v20.0.0.9-draft`. **Don't forget to publish the branch all the branches that you create by clicking "Publish this branch" after you create each branch**.
+2. Follow the same procedure in steps 1b-1c to create `vX.0.0.X-staging` and `vX.0.0.X-draft` branches off of the new version branch you just created, which will be used for retroactive fixes to this version in the future. E.g. if `v20.0.0.9` is the version being released, then select `v20.0.0.9` from the **Current Branch** menu in GitHub desktop and create a new branch called `v20.0.0.9-staging`.  Switch back to `v20.0.0.9` branch and repeat to create `v20.0.0.9-draft`. **Don't forget to publish the branch all the branches that you create by clicking "Publish this branch" after you create each branch**.
   
 3. Repeat steps 1 and 2 for the [docs-generated repo](https://github.com/OpenLiberty/docs-generated).
 
@@ -108,7 +110,7 @@ Once you have verified the generated doc on the draft site, open a PR from `draf
 
    c. Click the pencil icon to edit the file. 
 
-   d. Add the new release version to the `branches` section
+   d. Add the new release version to the `branches` sections of the `doc. Remove the oldest release from the bginning 
 
    e. After you edit the file, create a pull request into the `prod` branch by clicking the **Propose changes** button. Once the pull request has been reviewed, merge it in.
    
@@ -116,15 +118,21 @@ Once you have verified the generated doc on the draft site, open a PR from `draf
    
    Make this change in both the [draft](https://github.com/OpenLiberty/docs-playbook/blob/draft/antora-playbook.yml) and [staging](https://github.com/OpenLiberty/docs-playbook/blob/staging/antora-playbook.yml) versions of the antora.yaml file by following the same procedure that is described in steps 4c. and 4e., making your PRs to either draft or staging as applicable. 
 
-5. In the docs repo, create a new vNext-based branch and change the `version` value in the `antora.yml`file to the next release `vX.0.0.X` version, incremented from the current release being published to openliberty.io. Create PRs to add this change to both the [`staging`](https://github.com/OpenLiberty/docs/blob/staging/antora.yml) and [`draft`](https://github.com/OpenLiberty/docs/blob/draft/antora.yml) branches.  For example, if `22.0.0.6` is being released, set the version to `22.0.0.7` in both `draft` and `staging`.
+5. Update the `antora.yaml` file in the docs repo.
 
-Once those changes have been reviewed merge them in. This is important so that the staging and draft builds can complete. Antora requires all of the versions of `antora.yml` of the branches being used in a build to have a unique version so they need to be updated to be unique from the version just released. You can either change the version and commit to draft/staging or create a pull request to do so.
+   This is important so that the staging and draft builds can complete. Antora requires all of the versions of `antora.yml` of the branches being used in    a build to have a unique version so they need to be updated to be unique from the version just released. You can either change the version and commit      to draft/staging or create a pull request to do so.
+   
+   a. In GitHub Desktop, create a new vNext-based branch and give it a descritpive name (eg `22.0.0.9 yaml updates`).
+   
+   b. In your local GitHub Open Liberty docs folder, open the `antora.yml`file and change the `version` value to the next release `vX.0.0.X` version,           incremented from the current release being published to openliberty.io. For example, if `22.0.0.6` is being released, set the version to `22.0.0.7`.
+   
+   c. Create PRs to add this change to both the [`staging`](https://github.com/OpenLiberty/docs/blob/staging/antora.yml) and [`draft`](https://github.com/OpenLiberty/docs/blob/draft/antora.yml) branches. Get the PRs reviewed and merge them in.
 
 6. Once the antora.yml [`staging`](https://github.com/OpenLiberty/docs/blob/staging/antora.yml) and [`draft`](https://github.com/OpenLiberty/docs/blob/draft/antora.yml) versions have been updated in the docs repo, create a pull request from `staging` to `vNext` to update the `antora.yml` version in `vNext`.
 
    a. Open Github Desktop and select the docs repo
 
-   b. Select `staging` in the **Current Branch** dropdown menu
+   b. Select `staging` in the **Current Branch** dropdown menu. Click **Fetch origin** to get any new changes.
 
    c. Click the **Create a Pull Request** button.
 
@@ -132,7 +140,7 @@ Once those changes have been reviewed merge them in. This is important so that t
 
 7. Repeat steps 5 and 6 for the [docs-generated repo](https://github.com/OpenLiberty/docs-generated/blob/vNext/antora.yml)
 
-8. Antora natively supports automatically redirecting to the latest version by replacing the latest numerical version number in the URL with 'latest'. However, you must update the doc-redirects properties file so that if a user manually types the latest numerical version into the URL they are redirected to the `latest` symbolic version. You can create these PRs by following the same procedure that is described in steps 4b-4d.
+8. Antora natively supports automatically redirecting to the latest version by replacing the latest numerical version number in the URL with 'latest'. However, you must update the doc-redirects properties file so that if a user manually types the latest numerical version into the URL they are redirected to the `latest` symbolic version. You can create these PRs in your browser by following the same procedure that is described in steps 4c-4e.
 
    a. In the docs-playbook repo, update [the redirects file on `prod`](https://github.com/OpenLiberty/docs-playbook/blob/prod/doc-redirects.properties) so that `/docs/xx.0.0.x/*=/docs/latest/`, where `xx.0.0.x` is the version of the doc that is being released. 
     
