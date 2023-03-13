@@ -6,7 +6,7 @@ content:
   - url: https://github.com/OpenLiberty/docs.git
     branches: [jakartaee10]
   - url: https://github.com/OpenLiberty/docs-generated.git
-    branches: [v23.0.0.2]
+    branches: [v23.0.0.3]
 urls:
   latest_version_segment: latest
 antora:
