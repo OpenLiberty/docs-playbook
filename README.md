@@ -110,7 +110,7 @@ Once you have verified the generated doc on the draft site, open a PR from `draf
 
    c. Click the pencil icon to edit the file. 
 
-   d. Add the new release version to the `branches` sections of the doc. Remove the oldest release from the beginning 
+   d. Add the new release version to the `branches` sections of the doc. Remove the oldest release from the beginning of the list.
 
    e. After you edit the file, create a pull request into the `prod` branch by clicking the **Propose changes** button. Get the pull request reviewed and merge it in.
    
