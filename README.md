@@ -24,6 +24,12 @@ The Open Liberty generated docs, which comprise the majority of the **Features**
 
 To verify the generated doc on draft, go to the [docs-generated repo draft branch](https://github.com/OpenLiberty/docs-generated/tree/draft) in a browser and find Chuck's most recent PR in the Git history. Look for a change in the PR, such as updates to a config element or a new feature page, and check the [docs draft site](https://docs-draft-openlibertyio.mybluemix.net/docs/latest/overview.html) to confirm that the changes are showing.
 
+### Updating the Open Liberty API and SPI documentation
+
+ The Open Liberty API and SPI documentation is updated with each 4-week release of the runtime. The navigation for the API and SPI sections of the docs is updated along with the generated docs. However, you must manually add the Javadoc API and SPI files to the staging branch of the docs-javadoc repository so that when the navigation builds on the staging site, the files are available for review and verification. For more information, see [Open Liberty Javadoc](https://github.com/OpenLiberty/docs-javadoc/).
+
+### Preparing the generated doc for publication
+
 Once you have verified the generated doc on the draft site, open a PR from `draft` to `staging` in the docs-generated repo and get it reviewed and merged. Once youy verify the generated doc on the `staging` site, open a PR from `staging` to `vNext` in the docs-generated repo. Get the PR reviewed and merge it in.
 
 ## Publishing the docs and preparing for the next release
@@ -43,10 +49,10 @@ Once you have verified the generated doc on the draft site, open a PR from `draf
    b. Remove the oldest branch from the beginning of the list. This version should be 2 years + 1 release behind the current release, ie, if you are publishing 22.0.0.8, you should remove `v20.0.0.7` from the list of branches.
    
    c. Make a pull request into the `prod` branch. Once the pull request has been reviewed merge it in.
+
+   d. Repeat steps 4a-4c for the [staging](https://github.com/OpenLiberty/docs-playbook/blob/staging/antora-playbook.yml) branch of this repo.
    
-   d. The branches list is specified differently in the draft and staging branches of the docs playbook, which use a wildcard schema to define the branches (for example, `branches: [v*.0.0.*-staging, staging]`). To remove the oldest release, you must exclude the corresponding version branch by appending an exclamation point (`!`) to the branch name, surrounding it in single quotation marks, and adding it to the list of branches. For example, to remove 20.0.0.7 from staging, you must specify `branches: [v*.0.0.*-staging, '!v20.0.0.7-staging', staging]`. For each release, add the value that you want to remove to the list. Do not replace any existing values. For example, to remove v.20.0.0.8, add it to the list instyead of replacing 20.0.0.7: `branches: [v*.0.0.*-staging, '!v20.0.0.7-staging', '!v20.0.0.8-staging', staging]`.
-   
-   Make this change in both the [draft](https://github.com/OpenLiberty/docs-playbook/blob/draft/antora-playbook.yml) and [staging](https://github.com/OpenLiberty/docs-playbook/blob/staging/antora-playbook.yml) versions of the antora.yaml file by following the same procedure that is described in steps 4c. and 4e., making your PRs to either draft or staging as applicable. Note that on staging, you must add values to both the `docs` and `docs-generated` sections. The `draft` branch version does not include a docs-generated section and you add the values only to the `docs` section.
+   d. The branches list is specified differently in the [draft](https://github.com/OpenLiberty/docs-playbook/blob/draft/antora-playbook.yml) branch of the docs playbook, which use a wildcard schema to define the branches (for example, `branches: [v*.0.0.*-draft, draft]`). To remove the oldest release, you must exclude the corresponding version branch by appending an exclamation point (`!`) to the branch name, surrounding it in single quotation marks, and adding it to the list of branches. For example, to remove 20.0.0.7 from draft, you must specify `branches: [v*.0.0.*-draft, '!v20.0.0.7-draft', draft]`. For each release, add the value that you want to remove to the list. Do not replace any existing values. For example, to remove v.20.0.0.8, add it to the list instead of replacing 20.0.0.7: `branches: [v*.0.0.*-draft, '!v20.0.0.7-draft', '!v20.0.0.8-draft', draft]`.
 
 5. In the docs repo, change the `version` in `antora.yml` in the [`staging`](https://github.com/OpenLiberty/docs/blob/staging/antora.yml) and [`draft`](https://github.com/OpenLiberty/docs/blob/draft/antora.yml) branches to the next release `vX.0.0.X` version incremented from the current release being published to openliberty.io. Once those changes have been reviewed merge them in. This is important so that the staging and draft builds can complete. Antora requires all of the versions of `antora.yml` of the branches being used in a build to have a unique version so they need to be updated to be unique from the version just released. You can either change the version and commit to draft/staging or create a pull request to do so.
 
@@ -71,7 +77,12 @@ The Open Liberty generated docs, which comprise the majority of the **Features**
 
 To verify the generated doc on draft, go to the [docs-generated repo draft branch](https://github.com/OpenLiberty/docs-generated/tree/draft) in a browser and find Chuck's most recent PR in the Git history. Look for a change in the PR, such as updates to a config element or a new feature page, and check the [docs draft site](https://docs-draft-openlibertyio.mybluemix.net/docs/latest/overview.html) to confirm that the changes are showing.
 
-Once you have verified the generated doc on the draft site, open a PR from `draft` to `staging` in the docs generated repo:
+### Updating the Open Liberty API and SPI documentation
+
+ The Open Liberty API and SPI documentation is updated with each 4-week release of the runtime. The navigation for the API and SPI sections of the docs is updated along with the generated docs. However, you must manually add the Javadoc API and SPI files to the staging branch of the docs-javadoc repository so that when the navigation builds on the staging site, the files are available for review and verification. For more information, see [Open Liberty Javadoc](https://github.com/OpenLiberty/docs-javadoc/).
+
+### Preparing the generated doc for publication
+Once you have verified the generated doc on the draft site and added the API and SPI doc files to the staging branch of the docs-javadoc repository , open a PR from `draft` to `staging` in the docs generated repo:
 
 1. Open Github Desktop and select the docs-generated repo
 2. Select `draft` in the **Current Branch** dropdown menu and click **Fetch origin**.
@@ -79,12 +90,16 @@ Once you have verified the generated doc on the draft site, open a PR from `draf
 4. In the resulting PR, click the **Edit** button and change the Base to `staging`
 5. Get the resulting PR reviewed and merged.
 
- Once you verify the generated doc on the [staging](https://docs-staging-openlibertyio.mqj6zf7jocq.us-south.codeengine.appdomain.cloud/docs/latest/overview.html) site, open a PR from `staging` to `vNext` in the docs-generated repo:
+ Once you verify the generated doc, API doc, and SPI doc on the [staging](https://docs-staging-openlibertyio.mqj6zf7jocq.us-south.codeengine.appdomain.cloud/docs/latest/overview.html) site, open a PR from `staging` to `vNext` in the docs-generated repo:
 
 1. Open Github Desktop and select the docs-generated repo
 2. Select `staging` in the **Current Branch** dropdown menu and click **Fetch origin** to get any new changes.
 3. Click the **Create a Pull Request** button. Give the PR a descriptiive title.
 4. Get the resulting PR reviewed and merged.
+
+### Updating the Open Liberty API and SPI documentation
+
+ The Open Liberty API and SPI documentation is updated with each 4-week release of the runtime. The navigation for the API and SPI sections of the docs is updated along with the generated docs, as described in the previous section. However, you must manually add the Javadoc API and SPI files to the staging branch of the docs-javadoc repository so that when the navigation builds on the staging site, the files are available for review and verification. For more information, see [Open Liberty Javadoc](https://github.com/OpenLiberty/docs-javadoc/).
 
 ## Publishing the docs and preparing for the next release
 
@@ -114,9 +129,9 @@ Once you have verified the generated doc on the draft site, open a PR from `draf
 
    e. After you edit the file, create a pull request into the `prod` branch by clicking the **Propose changes** button. Get the pull request reviewed and merge it in.
 
-   f. Repeat steps 4a-4e for the [staging](https://github.com/OpenLiberty/docs-playbook/blob/staging/antora-playbook.yml) branch of this repo
+   f. Repeat steps 4a-4e for the [staging](https://github.com/OpenLiberty/docs-playbook/blob/staging/antora-playbook.yml) branch of this repo.
    
-   f. The branches list is specified differently in the [draft](https://github.com/OpenLiberty/docs-playbook/blob/draft/antora-playbook.yml) branch of the docs playbook, which use a wildcard schema to define the branches (for example, `branches: [v*.0.0.*-draft, draft]`). To remove the oldest release, you must exclude the corresponding version branch by appending an exclamation point (`!`) to the branch name, surrounding it in single quotation marks, and adding it to the list of branches. For example, to remove 20.0.0.7 from draft, you must specify `branches: [v*.0.0.*-draft, '!v20.0.0.7-draft', draft]`. For each release, add the value that you want to remove to the list. Do not replace any existing values. For example, to remove v.20.0.0.8, add it to the list instead of replacing 20.0.0.7: `branches: [v*.0.0.*-draft, '!v20.0.0.7-draft', '!v20.0.0.8-draft', draft]`.
+   g. The branches list is specified differently in the [draft](https://github.com/OpenLiberty/docs-playbook/blob/draft/antora-playbook.yml) branch of the docs playbook, which use a wildcard schema to define the branches (for example, `branches: [v*.0.0.*-draft, draft]`). To remove the oldest release, you must exclude the corresponding version branch by appending an exclamation point (`!`) to the branch name, surrounding it in single quotation marks, and adding it to the list of branches. For example, to remove 20.0.0.7 from draft, you must specify `branches: [v*.0.0.*-draft, '!v20.0.0.7-draft', draft]`. For each release, add the value that you want to remove to the list. Do not replace any existing values. For example, to remove v.20.0.0.8, add it to the list instead of replacing 20.0.0.7: `branches: [v*.0.0.*-draft, '!v20.0.0.7-draft', '!v20.0.0.8-draft', draft]`.
    
 6. Update the `antora.yml` file in the docs repo.
 
