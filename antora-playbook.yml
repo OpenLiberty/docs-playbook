@@ -1,7 +1,6 @@
 site:
   title: Open Liberty Docs
   start_page: ROOT::overview.adoc
-  languages: [en, ja, zh-Hans]
 content:
   sources:
   - url: https://github.com/OpenLiberty/docs.git
@@ -18,6 +17,7 @@ asciidoc:
     icons: font
     source-highlighter: highlightjs
     allow-uri-read: true
+    languages: [en, ja, zh-Hans]
   extensions:
     - scripts/ol-asciidoc.js
 ui:
