@@ -1,6 +1,7 @@
 site:
   title: Open Liberty Docs
   start_page: ROOT::overview.adoc
+  languages: [en, ja, zh-Hans]
 content:
   sources:
   - url: https://github.com/OpenLiberty/docs.git
