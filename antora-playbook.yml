@@ -17,7 +17,7 @@ asciidoc:
     icons: font
     source-highlighter: highlightjs
     allow-uri-read: true
-    page-lang: [en, ja, zh-Hans]
+    lang: [en, ja, zh-Hans]
   extensions:
     - scripts/ol-asciidoc.js
 ui:
