@@ -8,9 +8,9 @@ There are three doc playbooks used in the builds, located in the following branc
 
 https://openliberty.io/ is built using the [prod playbook](https://github.com/OpenLiberty/docs-playbook/blob/prod/antora-playbook.yml). This file explicitly only contains versions of the documentation for released Open Liberty versions. This is the file that needs to be [updated each release](#publishing-a-new-release-of-open-liberty-docs) to add the new release to be published to openliberty.io. This is intentionally manual and does not use wildcards for the branches to prevent any unintended branches/content from being published to the site.
 
-The [staging site](http://staging-openlibertyio.mybluemix.net/) is built using the [staging playbook](https://github.com/OpenLiberty/docs-playbook/blob/staging/antora-playbook.yml). This playbook contains the `staging` branch which is used to stage in changes for the next documentation version to be released. It contains a wildcard `V*.0.0.*-staging` rule which pulls in all of the branches used to stage in changes to already released versions of documentation. This branch does not need any updating each release, and shouldn't need many, if any, updates in general.
+The [staging site](https://staging-openlibertyio.mqj6zf7jocq.us-south.codeengine.appdomain.cloud/docs/latest/overview.html) is built using the [staging playbook](https://github.com/OpenLiberty/docs-playbook/blob/staging/antora-playbook.yml). This playbook contains the `staging` branch which is used to stage in changes for the next documentation version to be released. It contains a wildcard `V*.0.0.*-staging` rule which pulls in all of the branches used to stage in changes to already released versions of documentation. This branch does not need any updating each release, and shouldn't need many, if any, updates in general.
 
-The [draft site](https://draft-openlibertyio.mybluemix.net/) is built using the [draft playbook](https://github.com/OpenLiberty/docs-playbook/blob/draft/antora-playbook.yml). This playbook contains the `draft` branch which pulls in all of the content currently being drafted. It contains a wildcard `V*.0.0.*-draft` which pulls in all of the branches used to draft changes to already released versions of documentation. This branch does not need any updating each release, and shouldn't need many, if any, updates in general.
+The [draft site](https://draft-openlibertyio.mqj6zf7jocq.us-south.codeengine.appdomain.cloud/docs/latest/overview.html) is built using the [draft playbook](https://github.com/OpenLiberty/docs-playbook/blob/draft/antora-playbook.yml). This playbook contains the `draft` branch which pulls in all of the content currently being drafted. It contains a wildcard `V*.0.0.*-draft` which pulls in all of the branches used to draft changes to already released versions of documentation. This branch does not need any updating each release, and shouldn't need many, if any, updates in general.
 
 # Publishing a new release of Open Liberty Docs
 
@@ -22,7 +22,7 @@ The following sections provide instructions to publish an Open Liberty release f
 
 The Open Liberty generated docs, which comprise the majority of the **Features** and **Server configuration** sections of the doc, are built from the [docs-generated repo](https://github.com/OpenLiberty/docs-generated). For each Open Liberty release, Chuck Bridgham from the kernel team posts the updated generated docs to the `draft` branch of the docs-generated repo. Contact Chuck several days before the release to ensure the generated docs are updated on draft in time to publish. 
 
-To verify the generated doc on draft, go to the [docs-generated repo draft branch](https://github.com/OpenLiberty/docs-generated/tree/draft) in a browser and find Chuck's most recent PR in the Git history. Look for a change in the PR, such as updates to a config element or a new feature page, and check the [docs draft site](https://docs-draft-openlibertyio.mybluemix.net/docs/latest/overview.html) to confirm that the changes are showing.
+To verify the generated doc on draft, go to the [docs-generated repo draft branch](https://github.com/OpenLiberty/docs-generated/tree/draft) in a browser and find Chuck's most recent PR in the Git history. Look for a change in the PR, such as updates to a config element or a new feature page, and check the [docs draft site](https://docs-draft-openlibertyio.mqj6zf7jocq.us-south.codeengine.appdomain.cloud/docs/latest/overview.html) to confirm that the changes are showing.
 
 ### Updating the Open Liberty API and SPI documentation
 
@@ -34,7 +34,7 @@ Once you have verified the generated doc on the draft site, open a PR from `draf
 
 ## Publishing the docs and preparing for the next release
 
-1. Once all of the changes look correct on the [staging site](https://staging-openlibertyio.mybluemix.net/docs/), and all of the `staging` branch changes have been merged into the `vNext` branch in the docs and docs-generated repos, check out the `vNext` branch in the docs repo and run `git pull` to get the updates. Then, create a branch off of the `vNext` branch with the next release version number. E.g. if the most recent version on openliberty.io is `20.0.0.8`, then create a `v20.0.0.9`  branch off of `vNext` by checking out the `vNext` branch and running `git checkout -b v20.0.0.9` and `git push` the branch.
+1. Once all of the changes look correct on the [staging site](https://staging-openlibertyio.mqj6zf7jocq.us-south.codeengine.appdomain.cloud/docs/latest/overview.html), and all of the `staging` branch changes have been merged into the `vNext` branch in the docs and docs-generated repos, check out the `vNext` branch in the docs repo and run `git pull` to get the updates. Then, create a branch off of the `vNext` branch with the next release version number. E.g. if the most recent version on openliberty.io is `20.0.0.8`, then create a `v20.0.0.9`  branch off of `vNext` by checking out the `vNext` branch and running `git checkout -b v20.0.0.9` and `git push` the branch.
 
 2. Create `vX.0.0.X-staging` and `vX.0.0.X-draft` branches off of the new version branch just created which will be used for retroactive fixes to this version in the future. E.g. if `v20.0.0.9` is the version being released, then from that branch run `git checkout -b v20.0.0.9-staging` and push that branch to the docs repo. Switch back to the `v20.0.0.9` branch and run `git checkout -b v20.0.0.9-draft` and push that branch to the docs repo.
    
@@ -75,7 +75,7 @@ These instructions are identical to those in the previous section except for Git
 ## Updating the generated docs
 The Open Liberty generated docs, which comprise the majority of the **Features** and **Server configuration** sections of the doc, are built from the [docs-generated repo](https://github.com/OpenLiberty/docs-generated). For each Open Liberty release, Chuck Bridgham from the kernel team posts the updated generated docs to the draft branch of the docs-generated repo. Contact Chuck several days before the release to ensure the generated docs are updated on draft in time to publish. 
 
-To verify the generated doc on draft, go to the [docs-generated repo draft branch](https://github.com/OpenLiberty/docs-generated/tree/draft) in a browser and find Chuck's most recent PR in the Git history. Look for a change in the PR, such as updates to a config element or a new feature page, and check the [docs draft site](https://docs-draft-openlibertyio.mybluemix.net/docs/latest/overview.html) to confirm that the changes are showing.
+To verify the generated doc on draft, go to the [docs-generated repo draft branch](https://github.com/OpenLiberty/docs-generated/tree/draft) in a browser and find Chuck's most recent PR in the Git history. Look for a change in the PR, such as updates to a config element or a new feature page, and check the [docs draft site](https://docs-draft-openlibertyio.mqj6zf7jocq.us-south.codeengine.appdomain.cloud/docs/latest/overview.html) to confirm that the changes are showing.
 
 ### Updating the Open Liberty API and SPI documentation
 
@@ -103,7 +103,7 @@ Once you have verified the generated doc on the draft site and added the API and
 
 ## Publishing the docs and preparing for the next release
 
-1. Once all of the changes look correct on the [staging site](https://staging-openlibertyio.mybluemix.net/docs/), and all of the `staging` branch changes have been merged into the `vNext` branch in the docs and docs-generated repos, create the branches you need for the new release in the docs repo.
+1. Once all of the changes look correct on the [staging site](https://staging-openlibertyio.mqj6zf7jocq.us-south.codeengine.appdomain.cloud/docs/latest/overview.html), and all of the `staging` branch changes have been merged into the `vNext` branch in the docs and docs-generated repos, create the branches you need for the new release in the docs repo.
 
    a. To confirm that all doc changes have merged from staging to vNext, go to the docs repo in GithUb Desktop and select the `vNext` in the **Current Branch** menu. Click the **Create a Pull Request** button. If all changes are merged, you will see "There's nothing to compare". If you see any changes, verify and merge them in.
    
