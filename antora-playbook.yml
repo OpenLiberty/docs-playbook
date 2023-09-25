@@ -4,9 +4,9 @@ site:
 content:
   sources:
   - url: https://github.com/OpenLiberty/docs.git
-    branches: [v21.0.0.9-staging, v21.0.0.12-staging, v22.0.0.3-staging, v22.0.0.6-staging, v22.0.0.9-staging, v22.0.0.10-staging, v22.0.0.11-staging, v22.0.0.12-staging, v22.0.0.13-staging, v23.0.0.1-staging, v23.0.0.2-staging, v23.0.0.3-staging, v23.0.0.4-staging, v23.0.0.5-staging, v23.0.0.6-staging, v23.0.0.7-staging, v23.0.0.8-staging, v23.0.0.9-staging, v23.0.0.10-staging, staging]
+    branches: [v21.0.0.9-staging, v21.0.0.12-staging, v22.0.0.3-staging, v22.0.0.4-staging, v22.0.0.5-staging, v22.0.0.6-staging, v22.0.0.7-staging, v22.0.0.8-staging, v22.0.0.9-staging, v22.0.0.10-staging, v22.0.0.11-staging, v22.0.0.12-staging, v22.0.0.13-staging, v23.0.0.1-staging, v23.0.0.2-staging, v23.0.0.3-staging, v23.0.0.4-staging, v23.0.0.5-staging, v23.0.0.6-staging, v23.0.0.7-staging, v23.0.0.8-staging, v23.0.0.9-staging, v23.0.0.10-staging, staging]
   - url: https://github.com/OpenLiberty/docs-generated.git
-    branches: [v21.0.0.9-staging, v21.0.0.12-staging, v22.0.0.3-staging, v22.0.0.6-staging, v22.0.0.9-staging, v22.0.0.10-staging, v22.0.0.11-staging, v22.0.0.12-staging, v22.0.0.13-staging, v23.0.0.1-staging, v23.0.0.2-staging, v23.0.0.3-staging, v23.0.0.4-staging, v23.0.0.5-staging, v23.0.0.6-staging, v23.0.0.7-staging, v23.0.0.8-staging, v23.0.0.9-staging, v23.0.0.10-staging, staging]
+    branches: [v21.0.0.9-staging, v21.0.0.12-staging, v22.0.0.3-staging, v22.0.0.4-staging, v22.0.0.5-staging, v22.0.0.6-staging, v22.0.0.7-staging, v22.0.0.8-staging, v22.0.0.9-staging, v22.0.0.10-staging, v22.0.0.11-staging, v22.0.0.12-staging, v22.0.0.13-staging, v23.0.0.1-staging, v23.0.0.2-staging, v23.0.0.3-staging, v23.0.0.4-staging, v23.0.0.5-staging, v23.0.0.6-staging, v23.0.0.7-staging, v23.0.0.8-staging, v23.0.0.9-staging, v23.0.0.10-staging, staging]
 urls:
   latest_version_segment: latest
 antora:
