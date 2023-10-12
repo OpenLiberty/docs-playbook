@@ -24,3 +24,6 @@ ui:
     url: src/main/content/antora_ui/build/ui-bundle.zip
     snapshot: true
   default_layout: general-reference
+runtime:
+  log:
+    level: info
