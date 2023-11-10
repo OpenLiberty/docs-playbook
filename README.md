@@ -80,9 +80,6 @@ The Open Liberty generated docs, which comprise the majority of the **Features**
 
 To verify the generated doc on draft, go to the [docs-generated repo draft branch](https://github.com/OpenLiberty/docs-generated/tree/draft) in a browser and find Chuck's most recent PR in the Git history. Look for a change in the PR, such as updates to a config element or a new feature page, and check the [docs draft site](https://docs-draft-openlibertyio.mqj6zf7jocq.us-south.codeengine.appdomain.cloud/docs/latest/overview.html) to confirm that the changes are showing.
 
-### Updating the Open Liberty API and SPI documentation
-
- The Open Liberty API and SPI documentation is updated with each 4-week release of the runtime. The navigation for the API and SPI sections of the docs is updated along with the generated docs. However, you must manually add the Javadoc API and SPI files to the staging branch of the docs-javadoc repository so that when the navigation builds on the staging site, the files are available for review and verification. For more information, see [Open Liberty Javadoc](https://github.com/OpenLiberty/docs-javadoc/).
 
 ### Preparing the generated doc for publication
 Once you have verified the generated doc on the draft site and added the API and SPI doc files to the staging branch of the docs-javadoc repository , open a PR from `draft` to `staging` in the docs generated repo:
