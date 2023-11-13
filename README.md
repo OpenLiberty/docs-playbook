@@ -80,9 +80,6 @@ The Open Liberty generated docs, which comprise the majority of the **Features**
 
 To verify the generated doc on draft, go to the [docs-generated repo draft branch](https://github.com/OpenLiberty/docs-generated/tree/draft) in a browser and find Chuck's most recent PR in the Git history. Look for a change in the PR, such as updates to a config element or a new feature page, and check the [docs draft site](https://docs-draft-openlibertyio.mqj6zf7jocq.us-south.codeengine.appdomain.cloud/docs/latest/overview.html) to confirm that the changes are showing.
 
-### Updating the Open Liberty API and SPI documentation
-
- The Open Liberty API and SPI documentation is updated with each 4-week release of the runtime. The navigation for the API and SPI sections of the docs is updated along with the generated docs. However, you must manually add the Javadoc API and SPI files to the staging branch of the docs-javadoc repository so that when the navigation builds on the staging site, the files are available for review and verification. For more information, see [Open Liberty Javadoc](https://github.com/OpenLiberty/docs-javadoc/).
 
 ### Preparing the generated doc for publication
 Once you have verified the generated doc on the draft site and added the API and SPI doc files to the staging branch of the docs-javadoc repository , open a PR from `draft` to `staging` in the docs generated repo:
@@ -131,10 +128,8 @@ Once you have verified the generated doc on the draft site and added the API and
    d. Add the new release version to the `branches` sections of the doc. Remove the oldest quarterly release from the beginning of the list if it is more than 2 years old. 
 
    e. After you edit the file, create a pull request into the `prod` branch by clicking the **Propose changes** button. Get the pull request reviewed and merge it in.
-
-   f. Repeat steps 4a-4e for the [staging](https://github.com/OpenLiberty/docs-playbook/blob/staging/antora-playbook.yml) branch of this repo.
    
-   g. The branches list is specified differently in the [draft](https://github.com/OpenLiberty/docs-playbook/blob/draft/antora-playbook.yml) branch of the docs playbook, which use a wildcard schema to define the branches (for example, `branches: [v*.0.0.*-draft, draft]`). To remove the oldest release, you must exclude the corresponding version branch by appending an exclamation point (`!`) to the branch name, surrounding it in single quotation marks, and adding it to the list of branches. For example, to remove 20.0.0.7 from draft, you must specify `branches: [v*.0.0.*-draft, '!v20.0.0.7-draft', draft]`. For each release, add the value that you want to remove to the list. Do not replace any existing values. For example, to remove v.20.0.0.8, add it to the list instead of replacing 20.0.0.7: `branches: [v*.0.0.*-draft, '!v20.0.0.7-draft', '!v20.0.0.8-draft', draft]`.
+   f. Remove the oldest release version from the `antora-playbook.yml` in the draft and staging branches. The branches list is specified differently in the [draft](https://github.com/OpenLiberty/docs-playbook/blob/draft/antora-playbook.yml) and [staging](https://github.com/OpenLiberty/docs-playbook/blob/staging/antora-playbook.yml) branches of the docs playbook, which use a wildcard schema to define the branches (for example, `branches: [v*.0.0.*-draft, draft]`). To remove the oldest release, you must exclude the corresponding version branch by appending an exclamation point (`!`) to the branch name, surrounding it in single quotation marks, and adding it to the list of branches. For example, to remove 20.0.0.7 from draft, you must specify `branches: [v*.0.0.*-draft, '!v20.0.0.7-draft', draft]`. For each release, add the value that you want to remove to the list. Do not replace any existing values. For example, to remove v.20.0.0.8, add it to the list instead of replacing 20.0.0.7: `branches: [v*.0.0.*-draft, '!v20.0.0.7-draft', '!v20.0.0.8-draft', draft]`. Follow the same process you used in steps 4a-4e to make the changes in both the draft and staging branches.
    
 6. Update the `antora.yml` file in the docs repo.
 
