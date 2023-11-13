@@ -34,7 +34,7 @@ Once you have verified the generated doc on the draft site, open a PR from `draf
 
 ## Publishing the docs and preparing for the next release
 
-1. Once all of the changes look correct on the [staging site](https://staging-openlibertyio.mqj6zf7jocq.us-south.codeengine.appdomain.cloud/docs/latest/overview.html), and all of the `staging` branch changes have been merged into the `vNext` branch in the docs and docs-generated repos, check out the `vNext` branch in the docs repo and run `git pull` to get the updates. Then, create a branch off of the `vNext` branch with the next release version number. E.g. if the most recent version on openliberty.io is `20.0.0.8`, then create a `v20.0.0.9`  branch off of `vNext` by checking out the `vNext` branch and running `git checkout -b v20.0.0.9` and `git push` the branch.
+1. Once all of the changes look correct on the [staging site](https://staging-openlibertyio.mqj6zf7jocq.us-south.codeengine.appdomain.cloud/docs/latest/overview.html), and all of the `staging` branch changes have been merged into the `vNext` branch in the docs and docs-generated repos, check out the `staging` branch in the docs repo and run `git pull` to get the updates. Then, create a branch off of the `vNext` branch with the next release version number. E.g. if the most recent version on openliberty.io is `20.0.0.8`, then create a `v20.0.0.9`  branch off of `vNext` by checking out the `vNext` branch and running `git checkout -b v20.0.0.9` and `git push` the branch.
 
 2. Create `vX.0.0.X-staging` and `vX.0.0.X-draft` branches off of the new version branch just created which will be used for retroactive fixes to this version in the future. E.g. if `v20.0.0.9` is the version being released, then from that branch run `git checkout -b v20.0.0.9-staging` and push that branch to the docs repo. Switch back to the `v20.0.0.9` branch and run `git checkout -b v20.0.0.9-draft` and push that branch to the docs repo.
    
@@ -105,7 +105,7 @@ Once you have verified the generated doc on the draft site and added the API and
 
 1. Once all of the changes look correct on the [staging site](https://staging-openlibertyio.mqj6zf7jocq.us-south.codeengine.appdomain.cloud/docs/latest/overview.html), and all of the `staging` branch changes have been merged into the `vNext` branch in the docs and docs-generated repos, create the branches you need for the new release in the docs repo.
 
-   a. To confirm that all doc changes have merged from staging to vNext, go to the docs repo in GithUb Desktop and select the `vNext` in the **Current Branch** menu. Click the **Create a Pull Request** button. If all changes are merged, you will see "There's nothing to compare". If you see any changes, verify and merge them in.
+   a. To confirm that all doc changes have merged from staging to vNext, go to the docs repo in GithUb Desktop and select the `staging` in the **Current Branch** menu. Click the **Create a Pull Request** button. If all changes are merged, you will see "There's nothing to compare". If you see any changes, verify and merge them in.
    
    b. In Github Desktop, make sure `vNext` is showing in the **Current Branch** menu. click **Fetch origin** to get any new changes.
 
