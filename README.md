@@ -18,7 +18,7 @@ This is the flow that must be followed when releasing a new version of docs on o
 
 The following sections provide instructions to publish an Open Liberty release from the command line. For similar instructions that use the GitHub desktop client, see [Publishing a new release of Open Liberty Docs by using GitHub desktop](#publishing-a-new-release-of-Open-Liberty-Docs-by-using-GitHub-desktop)
 
-## Updating the generated docs
+## Updating the generated docs and Javadocs
 
 The Open Liberty generated docs, which comprise the majority of the **Features** and **Server configuration** sections of the doc, are built from the [docs-generated repo](https://github.com/OpenLiberty/docs-generated). For each Open Liberty release, Chuck Bridgham from the kernel team posts the updated generated docs to the `draft` branch of the docs-generated repo. Contact Chuck several days before the release to ensure the generated docs are updated on draft in time to publish. 
 
@@ -27,7 +27,7 @@ To verify the generated doc on draft, go to the [docs-generated repo draft branc
 ### Updating the Open Liberty API and SPI documentation
 
  The Open Liberty API and SPI documentation is updated with each 4-week release of the runtime. The navigation for the API and SPI sections of the docs is updated along with the generated docs. However, you must manually add the Javadoc API and SPI files to the staging branch of the docs-javadoc repository so that when the navigation builds on the staging site, the files are available for review and verification. For more information, see [Open Liberty Javadoc](https://github.com/OpenLiberty/docs-javadoc/).
-
+ 
 ### Preparing the generated doc for publication
 
 Once you have verified the generated doc on the draft site, open a PR from `draft` to `staging` in the docs-generated repo and get it reviewed and merged. Once youy verify the generated doc on the `staging` site, open a PR from `staging` to `vNext` in the docs-generated repo. Get the PR reviewed and merge it in.
