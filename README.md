@@ -88,7 +88,7 @@ Once you have verified the generated doc on the draft site and added the API and
 2. Select `draft` in the **Current Branch** dropdown menu and click **Fetch origin**.
 3. Click the **Create a Pull Request** button.
 4. In the resulting PR, click the **Edit** button and change the Base to `staging`
-5. Get the resulting PR reviewed and merged.
+5. Get the resulting PR reviewed and merged. Merging the PR kicks off a build of the staging site.
 
  Once you verify the generated doc, API doc, and SPI doc on the [staging](https://docs-staging-openlibertyio.mqj6zf7jocq.us-south.codeengine.appdomain.cloud/docs/latest/overview.html) site, open a PR from `staging` to `vNext` in the docs-generated repo:
 
@@ -111,11 +111,15 @@ Once you have verified the generated doc on the draft site and added the API and
 
    c. Click the **New Branch** button and create a branch with the next release version number. E.g. if the most recent version on **openliberty.io** is `20.0.0.8`, then create a `v20.0.0.9`  branch. 
 
-2. Follow the same procedure in steps 1b-1c to create `vX.0.0.X-staging` and `vX.0.0.X-draft` branches off of the new version branch you just created, which will be used for retroactive fixes to this version in the future. E.g. if `v20.0.0.9` is the version being released, then select `v20.0.0.9` from the **Current Branch** menu in GitHub desktop and create a new branch called `v20.0.0.9-staging`.  Switch back to `v20.0.0.9` branch and repeat to create `v20.0.0.9-draft`. **Don't forget to publish the branch all the branches that you create by clicking "Publish this branch" after you create each branch**.
-  
-3. Repeat steps 1 and 2 for the [docs-generated repo](https://github.com/OpenLiberty/docs-generated).
+2. Create `vX.0.0.X-staging` and `vX.0.0.X-draft` branches off of the new version branch you just created, which will be used for retroactive fixes to this version in the future.
 
-4. Update the docs-playbook `antora-playbook.yml` file to add the new release version to production and remove the oldest release version from production, draft, and staging.
+   a. E.g. if `v20.0.0.9` is the version being released, then select `v20.0.0.9` from the **Current Branch** menu in GitHub desktop. Click the **New Branch** button to create a new branch called `v20.0.0.9-staging`.
+
+   b. Switch back to `v20.0.0.9` branch and repeat to create `v20.0.0.9-draft`. **Don't forget to publish the branch all the branches that you create by clicking "Publish this branch" after you create each branch**.
+  
+4. Repeat steps 1 and 2 for the [docs-generated repo](https://github.com/OpenLiberty/docs-generated).
+
+5. Update the docs-playbook `antora-playbook.yml` file to add the new release version to production and remove the oldest release version from production, draft, and staging.
 
    Openliberty.io docs support 2 years worth of previous releases, which can be selected from the version picker at the top of the docs TOC. However, while the previous year includes all twelve releases, the year before that includes only quaterly releases. For example, in September of 2023, we provide docs from all twelve releases in 20022, but only the final two qu=arterly releases from 2021: 22.0.0.9, and 22.0.0.12. You must add the new release version and remove the oldest release version fromn the `antora-playbook.yml` file to update the version picker.
 
