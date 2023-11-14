@@ -117,9 +117,9 @@ Once you have verified the generated doc on the draft site and added the API and
 
    b. Switch back to `v20.0.0.9` branch and repeat to create `v20.0.0.9-draft`. **Don't forget to publish the branch all the branches that you create by clicking "Publish this branch" after you create each branch**.
   
-4. Repeat steps 1 and 2 for the [docs-generated repo](https://github.com/OpenLiberty/docs-generated).
+3. Repeat steps 1 and 2 for the [docs-generated repo](https://github.com/OpenLiberty/docs-generated).
 
-5. Update the docs-playbook `antora-playbook.yml` file to add the new release version to production and remove the oldest release version from production, draft, and staging.
+4. Update the docs-playbook `antora-playbook.yml` file to add the new release version to production and remove the oldest release version from production, draft, and staging.
 
    Openliberty.io docs support 2 years worth of previous releases, which can be selected from the version picker at the top of the docs TOC. You must add the new release version and remove the oldest release version fromn the `antora-playbook.yml` file to update the version picker.
 
@@ -133,7 +133,7 @@ Once you have verified the generated doc on the draft site and added the API and
    
    e. Remove the oldest release version from the `antora-playbook.yml` in the draft and staging branches. The branches list is specified differently in the draft and staging branches of the docs playbook, which use a wildcard schema to define the branches (for example, `branches: [v*.0.0.*-draft, draft]`). To remove the oldest release, you must exclude the corresponding version branch by appending an exclamation point (`!`) to the branch name, surrounding it in single quotation marks, and adding it to the list of branches. For example, to remove 20.0.0.7 from draft, you must specify `branches: [v*.0.0.*-draft, '!v20.0.0.7-draft', draft]`. For each release, add the value that you want to remove to the list. Do not replace any existing values. For example, to remove v.20.0.0.8, add it to the list instead of replacing 20.0.0.7: `branches: [v*.0.0.*-draft, '!v20.0.0.7-draft', '!v20.0.0.8-draft', draft]`. Follow the same process you used in steps 4b-4d to make the changes in both the draft](https://github.com/OpenLiberty/docs-playbook/blob/draft/antora-playbook.yml) and [staging](https://github.com/OpenLiberty/docs-playbook/blob/staging/antora-playbook.yml) version of the file.
    
-6. Update the `antora.yml` file in the docs repo.
+5. Update the `antora.yml` file in the `draft` and `staging` branches of the docs repo.
 
    This is important so that the staging and draft builds can complete. Antora requires all of the versions of `antora.yml` of the branches being used in a build to have a unique version so they need to be updated to be unique from the version just released. You can either change the version and commit to draft/staging or create a pull request to do so.
    
@@ -141,9 +141,11 @@ Once you have verified the generated doc on the draft site and added the API and
    
    b. In your local GitHub Open Liberty docs folder, open the `antora.yml`file and change the `version` value to the next release `vX.0.0.X` version, incremented from the current release being published to openliberty.io. For example, if `22.0.0.6` is being released, set the version to `22.0.0.7`.
    
-   c. Create PRs to add this change to both the [`staging`](https://github.com/OpenLiberty/docs/blob/staging/antora.yml) and [`draft`](https://github.com/OpenLiberty/docs/blob/draft/antora.yml) branches. Get the PRs reviewed and merge them in.
+   c. Create a PR to add this change the [`staging`](https://github.com/OpenLiberty/docs/blob/staging/antora.yml) branch. Get the PR reviewed and merge it in.
 
-7. Once the antora.yml [`staging`](https://github.com/OpenLiberty/docs/blob/staging/antora.yml) and [`draft`](https://github.com/OpenLiberty/docs/blob/draft/antora.yml) versions have been updated in the docs repo, create a pull request from `staging` to `vNext` to update the `antora.yml` version in `vNext`.
+   d. Create a PR to add the change to the  [`draft`](https://github.com/OpenLiberty/docs/blob/draft/antora.yml) branch. Get the PR reviewed and merge it in.
+
+6. Once the antora.yml [`staging`](https://github.com/OpenLiberty/docs/blob/staging/antora.yml) and [`draft`](https://github.com/OpenLiberty/docs/blob/draft/antora.yml) versions have been updated in the docs repo, create a pull request from `staging` to `vNext` to update the `antora.yml` version in `vNext`.
 
    a. Open Github Desktop and select the docs repo
 
@@ -153,17 +155,17 @@ Once you have verified the generated doc on the draft site and added the API and
 
    d. Get the resulting PR reviewed and merged.
 
-8. Repeat steps 5 and 6 for the [docs-generated repo](https://github.com/OpenLiberty/docs-generated/blob/vNext/antora.yml)
+7. Repeat steps 5 and 6 for the [docs-generated repo](https://github.com/OpenLiberty/docs-generated/blob/vNext/antora.yml)
 
-9. Antora natively supports automatically redirecting to the latest version by replacing the latest numerical version number in the URL with 'latest'. However, you must update the doc-redirects properties file so that if a user manually types the latest numerical version into the URL they are redirected to the `latest` symbolic version. You can create these PRs in your browser by following the same procedure that is described in steps 4c-4e.
+8. Antora natively supports automatically redirecting to the latest version by replacing the latest numerical version number in the URL with 'latest'. However, you must update the doc-redirects properties file so that if a user manually types the latest numerical version into the URL they are redirected to the `latest` symbolic version. You can create these PRs in your browser by following the same procedure that is described in steps 4c-4e.
 
    a. In the docs-playbook repo, update [the redirects file on `prod`](https://github.com/OpenLiberty/docs-playbook/blob/prod/doc-redirects.properties) so that `/docs/xx.0.0.x/*=/docs/latest/`, where `xx.0.0.x` is the version of the doc that is being released. 
     
    b. Then, update the same file on [`draft`](https://github.com/OpenLiberty/docs-playbook/blob/draft/doc-redirects.properties) and [`staging`](https://github.com/OpenLiberty/docs-playbook/blob/staging/doc-redirects.properties) to point to the _next_ upcoming release (the newest released version + 1). For example, if the version that is being released is `22.0.0.5`, you must define `/docs/22.0.0.5/*=/docs/latest/` in the prod version of the docs-redirects properties file and `/docs/22.0.0.6/*=/docs/latest/` in the draft and staging versions of the file. 
 
-10. Before you proceed, make sure all of the pull requests and changes from previous steps have been merged into their respective repos (docs, docs-generated, and docs-playbook).
-11. Confirm the updated content and release versions on the draft and staging sites.
+9. Before you proceed, make sure all of the pull requests and changes from previous steps have been merged into their respective repos (docs, docs-generated, and docs-playbook).
+10. Confirm the updated content and release versions on the draft and staging sites.
    a. The PRs that you merged in step 7 & 8 triggered builds of the [`docs-draft site`](https://docs-draft-openlibertyio.mqj6zf7jocq.us-south.codeengine.appdomain.cloud/docs/latest/overview.html), [`full draft site`](https://draft-openlibertyio.mqj6zf7jocq.us-south.codeengine.appdomain.cloud/docs/latest/overview.html), [`docs-staging site`](https://docs-staging-openlibertyio.mqj6zf7jocq.us-south.codeengine.appdomain.cloud/docs/latest/overview.html), and [`full staging site`](https://staging-openlibertyio.mqj6zf7jocq.us-south.codeengine.appdomain.cloud/docs/latest/overview.html). Since the changes made in the previous steps were only to the doc specific repos, you can use the doc specific sites to validate your changes which take ~25min to redeploy (whereas the full sites take ~60min). If you have access, you can track the build progress in the [#was-ol-draft-site-alerts](https://ibm-cloud.slack.com/archives/C01G7L68KAP) and [#was-ol-staging-site-alerts](https://ibm-cloud.slack.com/archives/C01GX9P8YP2) slack channels.
    b. Once the builds complete, you can verify them on the draft and staging sites, which should now default to the _next_ upcoming version as `latest`. Look for the next upcoming version in the version-picker display at the beginning of the table of contents. When the prod site publishes, it will default to the version that is being released.
 
-12. Finally, in the [#was-open-liberty-site](https://ibm-cloud.slack.com/archives/C4U7TQUSY) Slack channel, request a rebuild of the production openliberty.io site to publish the release. Once a trigger is added to kick off a prod site build for changes to the `prod` branch of this repo, this step will be removed.
+13. Finally, in the [#was-open-liberty-site](https://ibm-cloud.slack.com/archives/C4U7TQUSY) Slack channel, request a rebuild of the production openliberty.io site to publish the release. Once a trigger is added to kick off a prod site build for changes to the `prod` branch of this repo, this step will be removed.
