@@ -18,7 +18,7 @@ This is the flow that must be followed when releasing a new version of docs on o
 
 The following sections provide instructions to publish an Open Liberty release from the command line. For similar instructions that use the GitHub desktop client, see [Publishing a new release of Open Liberty Docs by using GitHub desktop](#publishing-a-new-release-of-Open-Liberty-Docs-by-using-GitHub-desktop)
 
-## Updating the generated docs and Javadocs
+## Updating the generated docs and API docs
 
 The Open Liberty generated docs, which comprise the majority of the **Features** and **Server configuration** sections of the doc, are built from the [docs-generated repo](https://github.com/OpenLiberty/docs-generated). For each Open Liberty release, Chuck Bridgham from the kernel team posts the updated generated docs to the `draft` branch of the docs-generated repo. Contact Chuck several days before the release to ensure the generated docs are updated on draft in time to publish. 
 
@@ -75,12 +75,15 @@ Once you have verified the generated doc on the draft site, open a PR from `draf
 
 These instructions are identical to those in the previous section except for Git processes are described from the perpsective of using the GitHub Desktop client instead of the command line. This procedure assumes you have already have GitHub Desktop and have already cloned the [docs](https://github.com/OpenLiberty/docs), [docs-generated](https://github.com/OpenLiberty/docs-generated), and docs-playbook repos.
 
-## Updating the generated docs
+## Updating the generated docs and API Docs
 The Open Liberty generated docs, which comprise the majority of the **Features** and **Server configuration** sections of the doc, are built from the [docs-generated repo](https://github.com/OpenLiberty/docs-generated). For each Open Liberty release, Chuck Bridgham from the kernel team posts the updated generated docs to the draft branch of the docs-generated repo. Contact Chuck several days before the release to ensure the generated docs are updated on draft in time to publish. 
 
 To verify the generated doc on draft, go to the [docs-generated repo draft branch](https://github.com/OpenLiberty/docs-generated/tree/draft) in a browser and find Chuck's most recent PR in the Git history. Look for a change in the PR, such as updates to a config element or a new feature page, and check the [docs draft site](https://docs-draft-openlibertyio.mqj6zf7jocq.us-south.codeengine.appdomain.cloud/docs/latest/overview.html) to confirm that the changes are showing.
 
+### Updating the Open Liberty API and SPI documentation
 
+ The Open Liberty API and SPI documentation is updated with each 4-week release of the runtime. The navigation for the API and SPI sections of the docs is updated along with the generated docs, as described in the previous section. However, you must manually add the Javadoc API and SPI files to the staging branch of the docs-javadoc repository so that when the navigation builds on the staging site, the files are available for review and verification. For more information, see [Open Liberty Javadoc](https://github.com/OpenLiberty/docs-javadoc/).
+ 
 ### Preparing the generated doc for publication
 Once you have verified the generated doc on the draft site and added the API and SPI doc files to the staging branch of the docs-javadoc repository , open a PR from `draft` to `staging` in the docs generated repo:
 
@@ -97,9 +100,6 @@ Once you have verified the generated doc on the draft site and added the API and
 3. Click the **Create a Pull Request** button. Give the PR a descriptiive title.
 4. Get the resulting PR reviewed and merged.
 
-### Updating the Open Liberty API and SPI documentation
-
- The Open Liberty API and SPI documentation is updated with each 4-week release of the runtime. The navigation for the API and SPI sections of the docs is updated along with the generated docs, as described in the previous section. However, you must manually add the Javadoc API and SPI files to the staging branch of the docs-javadoc repository so that when the navigation builds on the staging site, the files are available for review and verification. For more information, see [Open Liberty Javadoc](https://github.com/OpenLiberty/docs-javadoc/).
 
 ## Publishing the docs and preparing for the next release
 
