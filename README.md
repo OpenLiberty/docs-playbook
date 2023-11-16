@@ -103,6 +103,7 @@ Next, Commit the changes to the `vNext` branch.
 8. Select `staging` in the **Current Branch** dropdown menu and click **Fetch origin** to get any new changes.
 9. Click the **Create a Pull Request** button. Give the PR a descriptiive title.
 10. Get the resulting PR reviewed and merged.
+11. Don't forget to merge the API/SPI doc changes to prod in the docs-javadoc repo. For more information, see the previous section.
 
 
 ## Publishing the docs and preparing for the next release
