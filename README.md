@@ -89,17 +89,17 @@ To verify the generated doc on draft, go to the [docs-generated repo draft branc
  3. Return to the Open Liberty Javadoc Repo and complete steps 11-13 of [Preparing Open Liberty API and SPI Javadoc files for publication.](https://github.com/OpenLiberty/docs-javadoc/). In these steps, you verify the Javadoc on the newly updated staging site and commit the files to the prod branch so they are available for the production release.
  
 ### Preparing the generated doc for publication
-Once you have verified the generated doc on the draft site and added the API and SPI doc files to the staging branch of the docs-javadoc repository , open a PR from `draft` to `staging` in the docs generated repo:
+Once you have verified the generated doc on the draft site and added the API and SPI doc files to the staging branch of the docs-javadoc repository, open a PR from `draft` to `staging` in the docs generated repo:
 
-1. Open Github Desktop and select the docs-generated repo
+1. Open Github Desktop and select the docs-generated repo.
 2. Select `draft` in the **Current Branch** dropdown menu and click **Fetch origin**.
 3. Click the **Create a Pull Request** button.
-4. In the resulting PR, click the **Edit** button and change the Base to `staging`
+4. In the resulting PR, click the **Edit** button and change the Base to `staging`.
 5. Get the resulting PR reviewed and merged. Merging the PR kicks off a build of the staging site.
-6. Verify the generated doc, API doc, and SPI doc on the [staging](https://docs-staging-openlibertyio.mqj6zf7jocq.us-south.codeengine.appdomain.cloud/docs/latest/overview.html) site
+6. Verify the generated doc, API doc, and SPI doc on the [staging](https://docs-staging-openlibertyio.mqj6zf7jocq.us-south.codeengine.appdomain.cloud/docs/latest/overview.html) site.
 
 Next, Commit the changes to the `vNext` branch. 
-7. Open Github Desktop and select the docs-generated repo
+7. Open Github Desktop and select the docs-generated repo.
 8. Select `staging` in the **Current Branch** dropdown menu and click **Fetch origin** to get any new changes.
 9. Click the **Create a Pull Request** button. Give the PR a descriptiive title.
 10. Get the resulting PR reviewed and merged.
