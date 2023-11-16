@@ -82,7 +82,11 @@ To verify the generated doc on draft, go to the [docs-generated repo draft branc
 
 ### Updating the Open Liberty API and SPI documentation
 
- The Open Liberty API and SPI documentation is updated with each 4-week release of the runtime. The navigation for the API and SPI sections of the docs is updated along with the generated docs, as described in the previous section. However, you must manually add the Javadoc API and SPI files to the staging branch of the docs-javadoc repository so that when the navigation builds on the staging site, the files are available for review and verification. For more information, see [Open Liberty Javadoc](https://github.com/OpenLiberty/docs-javadoc/).
+ The Open Liberty API and SPI documentation is updated with each 4-week release of the runtime. The navigation for the API and SPI sections of the docs is updated along with the generated docs, as described in the previous section. However, you must manually add the Javadoc API and SPI files to the staging branch of the docs-javadoc repository so that when the navigation builds on the staging site, the files are available for review and verification. 
+ 
+ 1. Before you send the generated docs to staging, go to the Open Liberty docs-javadoc repo and complete steps 1-10 of [Preparing Open Liberty API and SPI Javadoc files for publication.](https://github.com/OpenLiberty/docs-javadoc/). These steps make the updated Javadocs available to the staging site build.
+ 2. Complete steps 1-6 in the [Preparing the generated doc for publication](#Preparing-the-generated-doc-for-publication) section of this page.
+ 3. Return to the Open Liberty Javadoc Repo and complete steps 11-13 of [Preparing Open Liberty API and SPI Javadoc files for publication.](https://github.com/OpenLiberty/docs-javadoc/). In these steps, you verify the Javadoc on the newly updated staging site and commit the files to the prod branch so they are available for the production release.
  
 ### Preparing the generated doc for publication
 Once you have verified the generated doc on the draft site and added the API and SPI doc files to the staging branch of the docs-javadoc repository , open a PR from `draft` to `staging` in the docs generated repo:
@@ -92,13 +96,13 @@ Once you have verified the generated doc on the draft site and added the API and
 3. Click the **Create a Pull Request** button.
 4. In the resulting PR, click the **Edit** button and change the Base to `staging`
 5. Get the resulting PR reviewed and merged. Merging the PR kicks off a build of the staging site.
+6. Verify the generated doc, API doc, and SPI doc on the [staging](https://docs-staging-openlibertyio.mqj6zf7jocq.us-south.codeengine.appdomain.cloud/docs/latest/overview.html) site
 
- Once you verify the generated doc, API doc, and SPI doc on the [staging](https://docs-staging-openlibertyio.mqj6zf7jocq.us-south.codeengine.appdomain.cloud/docs/latest/overview.html) site, open a PR from `staging` to `vNext` in the docs-generated repo:
-
-1. Open Github Desktop and select the docs-generated repo
-2. Select `staging` in the **Current Branch** dropdown menu and click **Fetch origin** to get any new changes.
-3. Click the **Create a Pull Request** button. Give the PR a descriptiive title.
-4. Get the resulting PR reviewed and merged.
+Next, Commit the changes to the `vNext` branch. 
+7. Open Github Desktop and select the docs-generated repo
+8. Select `staging` in the **Current Branch** dropdown menu and click **Fetch origin** to get any new changes.
+9. Click the **Create a Pull Request** button. Give the PR a descriptiive title.
+10. Get the resulting PR reviewed and merged.
 
 
 ## Publishing the docs and preparing for the next release
