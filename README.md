@@ -99,6 +99,7 @@ Once you have verified the generated doc on the draft site and added the API and
 6. Verify the generated doc, API doc, and SPI doc on the [staging](https://docs-staging-openlibertyio.mqj6zf7jocq.us-south.codeengine.appdomain.cloud/docs/latest/overview.html) site.
 
 Next, Commit the changes to the `vNext` branch. 
+
 7. Open Github Desktop and select the docs-generated repo.
 8. Select `staging` in the **Current Branch** dropdown menu and click **Fetch origin** to get any new changes.
 9. Click the **Create a Pull Request** button. Give the PR a descriptiive title.
