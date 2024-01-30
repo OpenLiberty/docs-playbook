@@ -84,9 +84,9 @@ To verify the generated doc on draft, go to the [docs-generated repo draft branc
 
  The Open Liberty API and SPI documentation is updated with each 4-week release of the runtime. The navigation for the API and SPI sections of the docs is updated along with the generated docs, as described in the previous section. However, you must manually add the Javadoc API and SPI files to the staging branch of the docs-javadoc repository so that when the navigation builds on the staging site, the files are available for review and verification. 
  
- 1. Before you send the generated docs to staging, go to the Open Liberty docs-javadoc repo and complete steps 1-10 of [Preparing Open Liberty API and SPI Javadoc files for publication.](https://github.com/OpenLiberty/docs-javadoc/). These steps make the updated Javadocs available to the staging site build.
+ 1. Before you send the generated docs to staging, go to the Open Liberty docs-javadoc repo and complete steps 1-11 of [Preparing Open Liberty API and SPI Javadoc files for publication.](https://github.com/OpenLiberty/docs-javadoc/). These steps make the updated Javadocs available to the staging site build.
  2. Complete steps 1-6 in the [Preparing the generated doc for publication](#Preparing-the-generated-doc-for-publication) section of this page.
- 3. Return to the Open Liberty Javadoc Repo and complete steps 11-13 of [Preparing Open Liberty API and SPI Javadoc files for publication.](https://github.com/OpenLiberty/docs-javadoc/). In these steps, you verify the Javadoc on the newly updated staging site and commit the files to the prod branch so they are available for the production release.
+ 3. Return to the Open Liberty Javadoc Repo and complete steps 12-13 of [Preparing Open Liberty API and SPI Javadoc files for publication.](https://github.com/OpenLiberty/docs-javadoc/). In these steps, you verify the Javadoc on the newly updated staging site and commit the files to the prod branch so they are available for the production release.
  
 ### Preparing the generated doc for publication
 Once you have verified the generated doc on the draft site and added the API and SPI doc files to the staging branch of the docs-javadoc repository, open a PR from `draft` to `staging` in the docs generated repo:
