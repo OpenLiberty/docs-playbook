@@ -4,9 +4,9 @@ site:
 content:
   sources:
   - url: https://github.com/OpenLiberty/docs.git
-    branches: [v24.0.0.7, v24.0.0.8]
+    branches: [v24.0.0.5, v24.0.0.7, v24.0.0.8]
   - url: https://github.com/OpenLiberty/docs-generated.git
-    branches: [v24.0.0.7, v24.0.0.8]
+    branches: [v24.0.0.5, v24.0.0.7, v24.0.0.8]
 urls:
   latest_version_segment: latest
 antora:
