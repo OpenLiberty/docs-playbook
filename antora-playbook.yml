@@ -6,7 +6,7 @@ content:
   - url: https://github.com/OpenLiberty/docs.git
     branches: [v23.0.0.12, v24.0.0.3, v24.0.0.6, v24.0.0.9, v24.0.0.12, v25.0.0.3, v25.0.0.6, v25.0.0.7, v25.0.0.8, v25.0.0.9, v25.0.0.10, v25.0.0.11, v25.0.0.12]
   - url: https://github.com/OpenLiberty/docs-generated.git
-    branches: [v23.0.0.12, v24.0.0.3, v24.0.0.6, v24.0.0.9, v24.0.0.12, v25.0.0.3, v25.0.0.6, v25.0.0.7, v25.0.0.8, v25.0.0.9, v25.0.0.10, v25.0.0.11, v25.0.0.12]]
+    branches: [v23.0.0.12, v24.0.0.3, v24.0.0.6, v24.0.0.9, v24.0.0.12, v25.0.0.3, v25.0.0.6, v25.0.0.7, v25.0.0.8, v25.0.0.9, v25.0.0.10, v25.0.0.11, v25.0.0.12]
 urls:
   latest_version_segment: latest
 antora:
